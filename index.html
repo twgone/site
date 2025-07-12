@@ -287,7 +287,16 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="login-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+        <div style="background: white; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); min-width: 280px; text-align: center;">
+            <h2 style="color: #007aff; margin-bottom: 18px;">Login</h2>
+            <input type="text" id="login-username" placeholder="Usuário" style="width: 90%; padding: 10px; margin: 8px 0; border: 1px solid #e5e5e7; border-radius: 8px; font-size: 1em;"><br>
+            <input type="password" id="login-password" placeholder="Senha" style="width: 90%; padding: 10px; margin: 8px 0; border: 1px solid #e5e5e7; border-radius: 8px; font-size: 1em;"><br>
+            <button onclick="login()" style="background: #007aff; color: #fff; border: none; border-radius: 8px; padding: 10px 24px; font-size: 1em; margin: 10px 0; cursor: pointer; font-weight: 600;">Entrar</button>
+            <div id="loginMsg" style="color: #ff3b30; min-height: 20px; margin-top: 8px;"></div>
+        </div>
+    </div>
+    <div class="container" id="app-container" style="display:none;">
         <div class="header">
             Gerenciador de Produtos
         </div>
@@ -521,6 +530,22 @@
 
         // Inicializar UI
         updateUI();
+
+        // --- LOGIN SYSTEM ---
+        const USER = "twgone";
+        const PASS = "496783";
+
+        function login() {
+            const u = document.getElementById('login-username').value;
+            const p = document.getElementById('login-password').value;
+            if (u === USER && p === PASS) {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('app-container').style.display = 'block';
+            } else {
+                document.getElementById('loginMsg').innerText = "Usuário ou senha incorretos!";
+            }
+        }
+        // --- FIM LOGIN SYSTEM ---
     </script>
 </body>
 </html> 
