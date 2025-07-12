@@ -592,6 +592,107 @@
             from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
         }
+        /* Login card bonito para tema básico */
+        body:not(.modern-advanced) #login-card {
+            background: #fff !important;
+            box-shadow: 0 4px 24px #007aff22 !important;
+            border: 2px solid #e3eefd !important;
+        }
+        body:not(.modern-advanced) #login-title {
+            color: #007aff !important;
+            text-shadow: 0 0 2px #e3eefd;
+        }
+        body:not(.modern-advanced) #login-btn {
+            background: linear-gradient(90deg, #007aff 0%, #4fc3f7 100%) !important;
+            color: #fff !important;
+            box-shadow: 0 0 8px #007aff33 !important;
+            border: none !important;
+        }
+        body:not(.modern-advanced) #login-btn:hover {
+            background: linear-gradient(90deg, #4fc3f7 0%, #007aff 100%) !important;
+        }
+        body:not(.modern-advanced) #login-card input {
+            background: #f4f8fb !important;
+            color: #222 !important;
+            border: 1.5px solid #b3d4fc !important;
+        }
+        body:not(.modern-advanced) #login-card input:focus {
+            border: 1.5px solid #007aff !important;
+            box-shadow: 0 0 0 2px #b3d4fc !important;
+        }
+        .modern-advanced #login-btn {
+            background: linear-gradient(90deg, #223a5f 0%, #1e90ff 100%) !important;
+            color: #fff !important;
+            box-shadow: 0 2px 8px #1e274633 !important;
+            border-radius: 10px !important;
+            border: none !important;
+            font-weight: 700 !important;
+            font-size: 1.1em !important;
+            letter-spacing: 1px !important;
+            text-shadow: none !important;
+            padding: 12px 32px !important;
+            margin: 14px 0 0 0 !important;
+            width: 90% !important;
+            display: block !important;
+            cursor: pointer !important;
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s !important;
+        }
+        .modern-advanced #login-btn:hover {
+            background: linear-gradient(90deg, #1e90ff 0%, #223a5f 100%) !important;
+            box-shadow: 0 4px 16px #1e90ff33 !important;
+        }
+        .modern-advanced #login-card {
+            background: rgba(10,25,47,0.98) !important;
+            box-shadow: 0 4px 24px #1e274644 !important;
+            border: 2px solid #223a5f !important;
+            border-radius: 16px !important;
+            padding: 32px 24px !important;
+            min-width: 280px !important;
+            text-align: center !important;
+        }
+        .modern-advanced #login-title {
+            color: #1e90ff !important;
+            text-shadow: 0 0 2px #223a5f !important;
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            margin-bottom: 18px !important;
+        }
+        .modern-advanced #login-card input {
+            background: #1e2746 !important;
+            color: #e0e6ed !important;
+            border: 1.5px solid #3a506b !important;
+            border-radius: 8px !important;
+            font-size: 1em !important;
+            padding: 12px !important;
+            margin: 8px 0 !important;
+            width: 90% !important;
+        }
+        .modern-advanced #login-card input:focus {
+            border: 1.5px solid #1e90ff !important;
+            box-shadow: 0 0 0 2px #1e90ff !important;
+        }
+        .login-btn-modern {
+            background: linear-gradient(90deg, #223a5f 0%, #1e90ff 100%) !important;
+            color: #fff !important;
+            box-shadow: 0 2px 8px #1e274633 !important;
+            border-radius: 10px !important;
+            border: none !important;
+            font-weight: 700 !important;
+            font-size: 1.1em !important;
+            letter-spacing: 1px !important;
+            text-shadow: none !important;
+            padding: 12px 32px !important;
+            margin: 14px 0 0 0 !important;
+            width: 90% !important;
+            display: block !important;
+            cursor: pointer !important;
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s !important;
+        }
+        .login-btn-modern:hover {
+            background: linear-gradient(90deg, #1e90ff 0%, #223a5f 100%) !important;
+            box-shadow: 0 4px 16px #1e90ff33 !important;
+        }
     </style>
 </head>
 <body>
@@ -602,7 +703,7 @@
             <br>
             <input type="password" id="login-password" placeholder="Senha" style="width: 90%; padding: 12px; margin: 8px 0; border: 1.5px solid #ff512f; border-radius: 8px; font-size: 1em; background: #1a0000; color: #fff; transition: border 0.2s, box-shadow 0.2s;">
             <br>
-            <button id="login-btn" onclick="login()" style="background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%); color: #fff; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1.1em; margin: 14px 0 0 0; cursor: pointer; font-weight: 700; font-family: 'Orbitron', Segoe UI, Arial, sans-serif; box-shadow: 0 0 12px #ff512f99; letter-spacing: 1px; transition: background 0.2s, box-shadow 0.2s, transform 0.1s;">Entrar</button>
+            <button id="login-btn" onclick="login()">Entrar</button>
             <div id="loginMsg" style="color: #ff512f; min-height: 20px; margin-top: 8px;"></div>
         </div>
     </div>
@@ -919,34 +1020,9 @@
             const loginBtn = document.getElementById('login-btn');
             if (theme === 'modern') {
                 document.body.classList.add('modern-advanced');
-                if (loginCard) {
-                    loginCard.style.background = 'rgba(10,25,47,0.98)';
-                    loginCard.style.boxShadow = '0 0 16px #1e274644';
-                    loginCard.style.border = '2px solid #3a506b';
-                }
-                if (loginTitle) {
-                    loginTitle.style.color = '#1e90ff';
-                    loginTitle.style.textShadow = '0 0 4px #3a506b';
-                }
-                if (loginBtn) {
-                    loginBtn.style.background = 'linear-gradient(90deg, #3a506b 0%, #1e90ff 100%)';
-                    loginBtn.style.color = '#e0e6ed';
-                    loginBtn.style.boxShadow = '0 0 8px #1e90ff33';
-                }
+                if (loginBtn) loginBtn.classList.add('login-btn-modern');
             } else {
-                if (loginCard) {
-                    loginCard.style.background = '#fff';
-                    loginCard.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
-                    loginCard.style.border = '2px solid #007aff';
-                }
-                if (loginTitle) {
-                    loginTitle.style.color = '#007aff';
-                }
-                if (loginBtn) {
-                    loginBtn.style.background = '#007aff';
-                    loginBtn.style.color = '#fff';
-                    loginBtn.style.boxShadow = '0 0 8px #007aff44';
-                }
+                if (loginBtn) loginBtn.classList.remove('login-btn-modern');
             }
         }
         function setTheme(theme) {
