@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Produtos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f2f2f7;
+            color: #1d1d1f;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: #007aff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .add-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #007aff;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,122,255,0.3);
+            transition: transform 0.2s;
+        }
+
+        .add-button:hover {
+            transform: scale(1.1);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8e8e93;
+        }
+
+        .empty-state i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .product-list {
+            padding: 20px;
+        }
+
+        .product-item {
+            background: white;
+            border: 1px solid #e5e5e7;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: transform 0.2s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+            color: #1d1d1f;
+        }
+
+        .product-details {
+            color: #8e8e93;
+            font-size: 14px;
+        }
+
+        .product-total {
+            text-align: right;
+        }
+
+        .product-total .amount {
+            font-size: 18px;
+            font-weight: 600;
+            color: #007aff;
+        }
+
+        .product-total .label {
+            font-size: 12px;
+            color: #8e8e93;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .edit-button {
+            background: #34c759;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .delete-button {
+            background: #ff3b30;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .incomplete-product {
+            border-left: 4px solid #ff9500;
+        }
+
+        .incomplete-badge {
+            background: #ff9500;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .total-section {
+            background: white;
+            border-top: 1px solid #e5e5e7;
+            padding: 20px;
+            position: sticky;
+            bottom: 0;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .total-amount {
+            color: #007aff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 20px;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #8e8e93;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e5e7;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form-group.optional label::after {
+            content: " (opcional)";
+            color: #8e8e93;
+            font-weight: normal;
+        }
+
+        .quantity-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .quantity-input {
+            width: 80px !important;
+        }
+
+        .quantity-button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e5e5e7;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .add-product-btn {
+            width: 100%;
+            padding: 16px;
+            background: #007aff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .add-product-btn:disabled {
+            background: #8e8e93;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Gerenciador de Produtos
+        </div>
+
+        <div id="empty-state" class="empty-state">
+            <i>🛒</i>
+            <h2>Nenhum produto adicionado</h2>
+            <p>Toque no botão + para adicionar seu primeiro produto</p>
+        </div>
+
+        <div id="product-list" class="product-list" style="display: none;">
+            <!-- Produtos serão inseridos aqui -->
+        </div>
+
+        <div id="total-section" class="total-section" style="display: none;">
+            <div class="total-row">
+                <span>Total:</span>
+                <span class="total-amount" id="total-amount">R$ 0,00</span>
+            </div>
+        </div>
+
+        <button class="add-button" onclick="openModal()">+</button>
+    </div>
+
+    <!-- Modal para adicionar/editar produto -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Adicionar Produto</h2>
+                <button class="close-button" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <form id="add-product-form">
+                <input type="hidden" id="edit-id" value="">
+                
+                <div class="form-group">
+                    <label for="product-name">Nome do Produto</label>
+                    <input type="text" id="product-name" placeholder="Digite o nome do produto" required>
+                </div>
+                
+                <div class="form-group optional">
+                    <label for="product-price">Preço (R$)</label>
+                    <input type="number" id="product-price" placeholder="0.00" step="0.01" min="0">
+                </div>
+                
+                <div class="form-group optional">
+                    <label for="product-quantity">Quantidade</label>
+                    <div class="quantity-group">
+                        <button type="button" class="quantity-button" onclick="changeQuantity(-1)">-</button>
+                        <input type="number" id="product-quantity" class="quantity-input" value="1" min="1" max="999">
+                        <button type="button" class="quantity-button" onclick="changeQuantity(1)">+</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="add-product-btn" id="submit-btn">Adicionar Produto</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let products = [];
+        let nextId = 1;
+        let editingId = null;
+
+        function openModal(productId = null) {
+            editingId = productId;
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            if (productId) {
+                // Modo edição
+                const product = products.find(p => p.id === productId);
+                if (product) {
+                    document.getElementById('edit-id').value = product.id;
+                    document.getElementById('product-name').value = product.name;
+                    document.getElementById('product-price').value = product.price || '';
+                    document.getElementById('product-quantity').value = product.quantity || 1;
+                    title.textContent = 'Editar Produto';
+                    submitBtn.textContent = 'Salvar Alterações';
+                }
+            } else {
+                // Modo adição
+                document.getElementById('edit-id').value = '';
+                document.getElementById('add-product-form').reset();
+                document.getElementById('product-quantity').value = '1';
+                title.textContent = 'Adicionar Produto';
+                submitBtn.textContent = 'Adicionar Produto';
+            }
+            
+            modal.style.display = 'block';
+            document.getElementById('product-name').focus();
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('add-product-form').reset();
+            document.getElementById('product-quantity').value = '1';
+            editingId = null;
+        }
+
+        function changeQuantity(delta) {
+            const input = document.getElementById('product-quantity');
+            let value = parseInt(input.value) || 1;
+            value = Math.max(1, Math.min(999, value + delta));
+            input.value = value;
+        }
+
+        function addProduct(name, price, quantity) {
+            const product = {
+                id: nextId++,
+                name: name,
+                price: price ? parseFloat(price) : null,
+                quantity: quantity ? parseInt(quantity) : null
+            };
+            
+            products.push(product);
+            updateUI();
+            closeModal();
+        }
+
+        function editProduct(id, name, price, quantity) {
+            const productIndex = products.findIndex(p => p.id === id);
+            if (productIndex !== -1) {
+                products[productIndex] = {
+                    ...products[productIndex],
+                    name: name,
+                    price: price ? parseFloat(price) : null,
+                    quantity: quantity ? parseInt(quantity) : null
+                };
+                updateUI();
+                closeModal();
+            }
+        }
+
+        function removeProduct(id) {
+            if (confirm('Tem certeza que deseja remover este produto?')) {
+                products = products.filter(p => p.id !== id);
+                updateUI();
+            }
+        }
+
+        function isProductComplete(product) {
+            return product.price !== null && product.quantity !== null;
+        }
+
+        function updateUI() {
+            const emptyState = document.getElementById('empty-state');
+            const productList = document.getElementById('product-list');
+            const totalSection = document.getElementById('total-section');
+            
+            if (products.length === 0) {
+                emptyState.style.display = 'block';
+                productList.style.display = 'none';
+                totalSection.style.display = 'none';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            productList.style.display = 'block';
+            totalSection.style.display = 'block';
+            
+            // Renderizar produtos
+            productList.innerHTML = products.map(product => {
+                const isComplete = isProductComplete(product);
+                const totalPrice = isComplete ? (product.price * product.quantity) : 0;
+                
+                return `
+                    <div class="product-item ${!isComplete ? 'incomplete-product' : ''}">
+                        <div class="product-header">
+                            <div class="product-info">
+                                <h3>
+                                    ${product.name}
+                                    ${!isComplete ? '<span class="incomplete-badge">Incompleto</span>' : ''}
+                                </h3>
+                                <div class="product-details">
+                                    ${isComplete 
+                                        ? `R$ ${product.price.toFixed(2)} × ${product.quantity}`
+                                        : 'Preço e quantidade não definidos'
+                                    }
+                                </div>
+                            </div>
+                            <div class="product-total">
+                                <div class="amount">
+                                    ${isComplete ? `R$ ${totalPrice.toFixed(2)}` : 'R$ 0,00'}
+                                </div>
+                                <div class="label">Total</div>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="edit-button" onclick="openModal(${product.id})">Editar</button>
+                            <button class="delete-button" onclick="removeProduct(${product.id})">Remover</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Calcular e exibir total apenas de produtos completos
+            const total = products
+                .filter(isProductComplete)
+                .reduce((sum, product) => sum + (product.price * product.quantity), 0);
+            document.getElementById('total-amount').textContent = `R$ ${total.toFixed(2)}`;
+        }
+
+        // Event listeners
+        document.getElementById('add-product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('product-name').value.trim();
+            const price = document.getElementById('product-price').value;
+            const quantity = document.getElementById('product-quantity').value;
+            const editId = document.getElementById('edit-id').value;
+            
+            if (name) {
+                if (editId) {
+                    // Modo edição
+                    editProduct(parseInt(editId), name, price, quantity);
+                } else {
+                    // Modo adição
+                    addProduct(name, price, quantity);
+                }
+            }
+        });
+
+        // Fechar modal ao clicar fora
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Inicializar UI
+        updateUI();
+    </script>
+</body>
+</html> 
