@@ -15,6 +15,11 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f2f2f7;
             color: #1d1d1f;
+            /* Marca d'água da empresa (imagem será adicionada depois) */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 320px auto;
+            opacity: 1;
         }
 
         .container {
@@ -278,27 +283,335 @@
             cursor: not-allowed;
         }
 
+        .form-group select {
+            width: 100%;
+            padding: 16px 12px;
+            border: 1px solid #e5e5e7;
+            border-radius: 8px;
+            font-size: 18px;
+            background: #fff;
+            margin-top: 4px;
+        }
+        @media (max-width: 768px) {
+            .form-group select {
+                padding: 18px 12px;
+                font-size: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 margin: 0;
                 box-shadow: none;
             }
+            .product-item {
+                padding: 8px 8px;
+                margin-bottom: 8px;
+                border-radius: 8px;
+            }
+            .product-header {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 6px;
+            }
+            .product-info h3 {
+                font-size: 1em;
+                margin-bottom: 2px;
+            }
+            .product-details {
+                font-size: 0.95em;
+            }
+            .product-total .amount {
+                font-size: 1em;
+            }
+            .product-actions {
+                gap: 4px;
+                margin-top: 6px;
+            }
+            .edit-button, .delete-button {
+                padding: 6px 10px;
+                font-size: 0.95em;
+                border-radius: 5px;
+            }
+            h3.category-title {
+                font-size: 1.1em !important;
+                margin: 12px 0 4px 0 !important;
+            }
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+        /* Tema moderno futurista (aplicado via JS) */
+        .modern-future {
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+        }
+        .modern-future .header {
+            background: linear-gradient(90deg, #6a00f4 0%, #3a86ff 50%, #00eaff 100%) !important;
+            color: #fff !important;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #00eaff, 0 0 2px #fff;
+            border-bottom: 2px solid #00eaff;
+        }
+        .modern-future .container {
+            background: rgba(30, 0, 60, 0.92) !important;
+            box-shadow: 0 8px 32px 0 rgba(31, 0, 50, 0.37) !important;
+            border-radius: 18px !important;
+        }
+        .modern-future body {
+            background: linear-gradient(135deg, #0f0026 0%, #3a86ff 60%, #00eaff 100%) !important;
+            color: #fff !important;
+        }
+        .modern-future .add-button, .modern-future .edit-button, .modern-future .delete-button, .modern-future .add-product-btn, .modern-future #theme-toggle {
+            background: linear-gradient(90deg, #6a00f4 0%, #00eaff 100%) !important;
+            color: #fff !important;
+            border: none !important;
+            box-shadow: 0 0 12px #00eaffcc, 0 0 4px #6a00f4cc;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .modern-future .add-button:hover, .modern-future .edit-button:hover, .modern-future .delete-button:hover, .modern-future .add-product-btn:hover, .modern-future #theme-toggle:hover {
+            background: linear-gradient(90deg, #00eaff 0%, #6a00f4 100%) !important;
+            color: #fff !important;
+            box-shadow: 0 0 24px #00eaffcc, 0 0 8px #6a00f4cc;
+            transform: scale(1.07);
+        }
+        .modern-future .product-item {
+            border: 1.5px solid #00eaff !important;
+            background: rgba(30, 0, 60, 0.85) !important;
+            transition: box-shadow 0.2s;
+        }
+        .modern-future .product-item:hover {
+            box-shadow: 0 0 16px #00eaff99;
+        }
+        .modern-future .category-title {
+            color: #00eaff !important;
+            text-shadow: 0 0 8px #00eaff;
+        }
+        .modern-future .incomplete-badge {
+            background: #3a86ff !important;
+            color: #fff !important;
+            text-shadow: 0 0 4px #00eaff;
+        }
+        .modern-future #dev-footer {
+            background: rgba(30,0,60,0.7) !important;
+            color: #00eaff !important;
+        }
+        .modern-future #theme-modal-content {
+            background: #1a0022 !important;
+            color: #fff !important;
+        }
+        .modern-future input, .modern-future select {
+            background: #1a0022 !important;
+            color: #00eaff !important;
+            border: 1.5px solid #00eaff !important;
+        }
+        .modern-future input:focus, .modern-future select:focus {
+            box-shadow: 0 0 0 2px #00eaff !important;
+        }
+        .modern-future h3, .modern-future label {
+            color: #00eaff !important;
+            text-shadow: 0 0 6px #6a00f4;
+        }
+        .modern-future .modal-content {
+            border-radius: 18px !important;
+            box-shadow: 0 0 24px #00eaff44;
+        }
+        .modern-future .form-group select {
+            background: #1a0022 !important;
+            color: #00eaff !important;
+        }
+        .modern-future .form-group select:focus {
+            box-shadow: 0 0 0 2px #00eaff !important;
+        }
+        .modern-future .add-button {
+            border-radius: 50% !important;
+            font-size: 1.5em !important;
+        }
+        .modern-future .edit-button, .modern-future .delete-button {
+            border-radius: 6px !important;
+        }
+        .modern-future .product-info h3 {
+            text-shadow: 0 0 6px #00eaff;
+        }
+        .modern-future .product-total .amount {
+            color: #00eaff !important;
+            text-shadow: 0 0 6px #00eaff;
+        }
+        /* Tema moderno avançado sóbrio vermelho/laranja/preto (menos neon) */
+        .modern-advanced {
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            background: linear-gradient(135deg, #0a192f 0%, #1e2746 60%, #3a506b 100%) !important;
+            color: #e0e6ed !important;
+        }
+        .modern-advanced .header {
+            background: linear-gradient(90deg, #1e2746 0%, #3a506b 60%, #0a192f 100%) !important;
+            color: #e0e6ed !important;
+            letter-spacing: 2px;
+            text-shadow: 0 0 6px #1e2746, 0 0 2px #fff;
+            border-bottom: 2px solid #3a506b;
+            box-shadow: 0 2px 12px #1e274644;
+        }
+        .modern-advanced .container {
+            background: rgba(10, 25, 47, 0.93) !important;
+            box-shadow: 0 4px 16px 0 rgba(30, 39, 70, 0.13) !important;
+            border-radius: 18px !important;
+            backdrop-filter: blur(4px);
+        }
+        .modern-advanced .add-button, .modern-advanced .edit-button, .modern-advanced .delete-button, .modern-advanced .add-product-btn, .modern-advanced #theme-toggle {
+            background: linear-gradient(90deg, #3a506b 0%, #1e90ff 100%) !important;
+            color: #e0e6ed !important;
+            border: none !important;
+            box-shadow: 0 0 6px #1e90ff33;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .modern-advanced .add-button:hover, .modern-advanced .edit-button:hover, .modern-advanced .delete-button:hover, .modern-advanced .add-product-btn:hover, .modern-advanced #theme-toggle:hover {
+            background: linear-gradient(90deg, #1e90ff 0%, #3a506b 100%) !important;
+            color: #fff !important;
+            box-shadow: 0 0 12px #1e90ff55;
+            transform: scale(1.05);
+        }
+        .modern-advanced .product-item {
+            border: 1.5px solid #3a506b !important;
+            background: rgba(20, 30, 50, 0.85) !important;
+            box-shadow: 0 0 8px #1e274622;
+            border-radius: 14px !important;
+            transition: box-shadow 0.2s, border 0.2s;
+        }
+        .modern-advanced .product-item:hover {
+            box-shadow: 0 0 16px #1e90ff33, 0 0 4px #3a506b55;
+            border: 1.5px solid #1e90ff !important;
+        }
+        .modern-advanced .category-title {
+            color: #1e90ff !important;
+            text-shadow: 0 0 4px #3a506b;
+        }
+        .modern-advanced .incomplete-badge {
+            background: #3a506b !important;
+            color: #e0e6ed !important;
+            text-shadow: 0 0 2px #1e90ff;
+        }
+        .modern-advanced #dev-footer {
+            background: rgba(10,25,47,0.7) !important;
+            color: #1e90ff !important;
+            border-top: 1.5px solid #3a506b;
+        }
+        .modern-advanced #theme-modal-content {
+            background: #1e2746 !important;
+            color: #e0e6ed !important;
+            box-shadow: 0 0 12px #1e274644;
+        }
+        .modern-advanced input, .modern-advanced select {
+            background: #1e2746 !important;
+            color: #e0e6ed !important;
+            border: 1.5px solid #3a506b !important;
+        }
+        .modern-advanced input:focus, .modern-advanced select:focus {
+            box-shadow: 0 0 0 2px #1e90ff !important;
+        }
+        .modern-advanced h3, .modern-advanced label {
+            color: #1e90ff !important;
+            text-shadow: 0 0 4px #3a506b;
+        }
+        .modern-advanced .modal-content {
+            border-radius: 18px !important;
+            box-shadow: 0 0 16px #1e274644;
+            background: rgba(20,30,50,0.98) !important;
+        }
+        .modern-advanced .form-group select {
+            background: #1e2746 !important;
+            color: #e0e6ed !important;
+        }
+        .modern-advanced .form-group select:focus {
+            box-shadow: 0 0 0 2px #1e90ff !important;
+        }
+        .modern-advanced .add-button {
+            border-radius: 50% !important;
+            font-size: 1.5em !important;
+        }
+        .modern-advanced .edit-button, .modern-advanced .delete-button {
+            border-radius: 6px !important;
+        }
+        .modern-advanced .product-info h3 {
+            text-shadow: 0 0 4px #3a506b;
+        }
+        .modern-advanced .product-total .amount {
+            color: #1e90ff !important;
+            text-shadow: 0 0 4px #3a506b;
+        }
+        .modern-advanced .total-section {
+            background: rgba(10,25,47,0.93) !important;
+            border-top: 1.5px solid #3a506b !important;
+        }
+        .modern-advanced .total-amount {
+            color: #1e90ff !important;
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            font-size: 1.2em !important;
+            text-shadow: 0 0 4px #3a506b;
+        }
+        .modern-advanced .modal-content button, .modern-advanced .modal-content input, .modern-advanced .modal-content select {
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+        }
+        .modern-advanced .modal-content button {
+            letter-spacing: 1px;
+        }
+        .modern-advanced .modal-content {
+            animation: glassFadeIn 0.7s cubic-bezier(.4,2,.6,1) both;
+        }
+        /* Login card azul sóbrio */
+        .modern-advanced #login-card {
+            background: rgba(10,25,47,0.98) !important;
+            box-shadow: 0 0 16px #1e274644 !important;
+            border: 2px solid #3a506b !important;
+        }
+        .modern-advanced #login-title {
+            color: #1e90ff !important;
+            text-shadow: 0 0 4px #3a506b;
+        }
+        .modern-advanced #login-btn {
+            background: linear-gradient(90deg, #3a506b 0%, #1e90ff 100%) !important;
+            color: #e0e6ed !important;
+            box-shadow: 0 0 8px #1e90ff33 !important;
+        }
+        .modern-advanced #login-btn:hover {
+            background: linear-gradient(90deg, #1e90ff 0%, #3a506b 100%) !important;
+            box-shadow: 0 0 16px #1e90ff33 !important;
+        }
+        /* Forçar azul em categorias, botões, badges, etc */
+        .modern-advanced .category-title, .modern-advanced .edit-button, .modern-advanced .delete-button, .modern-advanced .add-product-btn, .modern-advanced .add-button, .modern-advanced .incomplete-badge {
+            color: #e0e6ed !important;
+            background: #1e90ff !important;
+            border: none !important;
+            box-shadow: 0 0 6px #1e90ff33 !important;
+        }
+        .modern-advanced .edit-button:hover, .modern-advanced .delete-button:hover, .modern-advanced .add-product-btn:hover, .modern-advanced .add-button:hover {
+            background: #3a506b !important;
+            color: #fff !important;
+        }
+        .modern-advanced .incomplete-badge {
+            background: #3a506b !important;
+            color: #e0e6ed !important;
+        }
+        @keyframes glassFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
 <body>
     <div id="login-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
-        <div style="background: white; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); min-width: 280px; text-align: center;">
-            <h2 style="color: #007aff; margin-bottom: 18px;">Login</h2>
-            <input type="text" id="login-username" placeholder="Usuário" style="width: 90%; padding: 10px; margin: 8px 0; border: 1px solid #e5e5e7; border-radius: 8px; font-size: 1em;"><br>
-            <input type="password" id="login-password" placeholder="Senha" style="width: 90%; padding: 10px; margin: 8px 0; border: 1px solid #e5e5e7; border-radius: 8px; font-size: 1em;"><br>
-            <button onclick="login()" style="background: #007aff; color: #fff; border: none; border-radius: 8px; padding: 10px 24px; font-size: 1em; margin: 10px 0; cursor: pointer; font-weight: 600;">Entrar</button>
-            <div id="loginMsg" style="color: #ff3b30; min-height: 20px; margin-top: 8px;"></div>
+        <div id="login-card" style="background: #fff; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); min-width: 280px; text-align: center; border: 2px solid #ff512f; transition: background 0.3s, box-shadow 0.3s, border 0.3s;">
+            <h2 id="login-title" style="color: #ff512f; margin-bottom: 18px; font-family: 'Orbitron', Segoe UI, Arial, sans-serif; letter-spacing: 1px;">Login</h2>
+            <input type="text" id="login-username" placeholder="Usuário" style="width: 90%; padding: 12px; margin: 8px 0; border: 1.5px solid #ff512f; border-radius: 8px; font-size: 1em; background: #1a0000; color: #fff; transition: border 0.2s, box-shadow 0.2s;">
+            <br>
+            <input type="password" id="login-password" placeholder="Senha" style="width: 90%; padding: 12px; margin: 8px 0; border: 1.5px solid #ff512f; border-radius: 8px; font-size: 1em; background: #1a0000; color: #fff; transition: border 0.2s, box-shadow 0.2s;">
+            <br>
+            <button id="login-btn" onclick="login()" style="background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%); color: #fff; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1.1em; margin: 14px 0 0 0; cursor: pointer; font-weight: 700; font-family: 'Orbitron', Segoe UI, Arial, sans-serif; box-shadow: 0 0 12px #ff512f99; letter-spacing: 1px; transition: background 0.2s, box-shadow 0.2s, transform 0.1s;">Entrar</button>
+            <div id="loginMsg" style="color: #ff512f; min-height: 20px; margin-top: 8px;"></div>
         </div>
     </div>
     <div class="container" id="app-container" style="display:none;">
-        <div class="header">
+        <div class="header" style="position:relative;">
             Gerenciador de Produtos
+            <button id="theme-toggle" style="position:absolute; right:16px; top:16px; background:transparent; border:none; padding:0; cursor:pointer; width:28px; height:28px; display:flex; align-items:center; justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15.4a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 5 8.6a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.66 0 1.25.39 1.51 1H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z"/></svg>
+            </button>
         </div>
 
         <div id="empty-state" class="empty-state">
@@ -331,30 +644,52 @@
             
             <form id="add-product-form">
                 <input type="hidden" id="edit-id" value="">
-                
                 <div class="form-group">
                     <label for="product-name">Nome do Produto</label>
                     <input type="text" id="product-name" placeholder="Digite o nome do produto" required>
                 </div>
-                
-                <div class="form-group optional">
-                    <label for="product-price">Preço (R$)</label>
-                    <input type="number" id="product-price" placeholder="0.00" step="0.01" min="0">
+                <div class="form-group">
+                    <label for="product-category">Categoria</label>
+                    <select id="product-category" required>
+                        <option value="Cosméticos">Cosméticos</option>
+                        <option value="Higiene">Higiene</option>
+                        <option value="Alimentos">Alimentos</option>
+                        <option value="Limpeza">Limpeza</option>
+                        <option value="Outros">Outros</option>
+                    </select>
                 </div>
-                
-                <div class="form-group optional">
-                    <label for="product-quantity">Quantidade</label>
-                    <div class="quantity-group">
-                        <button type="button" class="quantity-button" onclick="changeQuantity(-1)">-</button>
-                        <input type="number" id="product-quantity" class="quantity-input" value="1" min="1" max="999">
-                        <button type="button" class="quantity-button" onclick="changeQuantity(1)">+</button>
+                <div id="edit-fields" style="display:none;">
+                    <div class="form-group optional">
+                        <label for="product-price">Preço (R$)</label>
+                        <input type="number" id="product-price" placeholder="0.00" step="0.01" min="0">
+                    </div>
+                    <div class="form-group optional">
+                        <label for="product-quantity">Quantidade</label>
+                        <div class="quantity-group">
+                            <button type="button" class="quantity-button" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="product-quantity" class="quantity-input" value="1" min="1" max="999">
+                            <button type="button" class="quantity-button" onclick="changeQuantity(1)">+</button>
+                        </div>
                     </div>
                 </div>
-                
                 <button type="submit" class="add-product-btn" id="submit-btn">Adicionar Produto</button>
             </form>
         </div>
     </div>
+
+    <div id="theme-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.25); z-index:2000; align-items:center; justify-content:center;">
+        <div id="theme-modal-content" style="background:#fff; border-radius:12px; padding:32px 24px; min-width:260px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+            <h3 style="margin-bottom:18px; color:#007aff;">Escolha o visual</h3>
+            <button onclick="setTheme('light')" style="margin:8px; padding:10px 24px; border-radius:8px; border:1px solid #007aff; background:#fff; color:#007aff; font-size:1em; cursor:pointer;">Básico</button>
+            <button onclick="setTheme('modern')" style="margin:8px; padding:10px 24px; border-radius:8px; border:1px solid #6a00f4; background:linear-gradient(90deg,#6a00f4,#a259ff,#00eaff); color:#fff; font-size:1em; cursor:pointer; box-shadow:0 0 8px #a259ff99;">Moderno</button>
+            <br><br>
+            <button onclick="closeThemeModal()" style="margin-top:10px; padding:6px 18px; border-radius:6px; border:none; background:#eee; color:#333; font-size:1em; cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+
+    <footer id="dev-footer" style="width:100%; text-align:center; padding:12px 0; font-size:1em; background:rgba(0,0,0,0.04); color:#444; position:fixed; left:0; bottom:0; z-index:100;">
+        <span style="font-weight:500;">Desenvolvedor do software:</span> <span style="color:#007aff; font-weight:600;">twgone</span>
+    </footer>
 
     <script>
         let products = [];
@@ -383,17 +718,19 @@
             const modal = document.getElementById('modal');
             const title = document.getElementById('modal-title');
             const submitBtn = document.getElementById('submit-btn');
-            
+            const editFields = document.getElementById('edit-fields');
             if (productId) {
                 // Modo edição
                 const product = products.find(p => p.id === productId);
                 if (product) {
                     document.getElementById('edit-id').value = product.id;
                     document.getElementById('product-name').value = product.name;
+                    document.getElementById('product-category').value = product.category || 'Outros';
                     document.getElementById('product-price').value = product.price || '';
                     document.getElementById('product-quantity').value = product.quantity || 1;
                     title.textContent = 'Editar Produto';
                     submitBtn.textContent = 'Salvar Alterações';
+                    editFields.style.display = '';
                 }
             } else {
                 // Modo adição
@@ -402,8 +739,8 @@
                 document.getElementById('product-quantity').value = '1';
                 title.textContent = 'Adicionar Produto';
                 submitBtn.textContent = 'Adicionar Produto';
+                editFields.style.display = 'none';
             }
-            
             modal.style.display = 'block';
             document.getElementById('product-name').focus();
         }
@@ -422,26 +759,27 @@
             input.value = value;
         }
 
-        function addProduct(name, price, quantity) {
+        function addProduct(name, category) {
             const product = {
                 id: nextId++,
                 name: name,
-                price: price ? parseFloat(price) : null,
-                quantity: quantity ? parseInt(quantity) : null
+                category: category,
+                price: null,
+                quantity: null
             };
-            
             products.push(product);
             saveProductsToStorage();
             updateUI();
             closeModal();
         }
 
-        function editProduct(id, name, price, quantity) {
+        function editProduct(id, name, category, price, quantity) {
             const productIndex = products.findIndex(p => p.id === id);
             if (productIndex !== -1) {
                 products[productIndex] = {
                     ...products[productIndex],
                     name: name,
+                    category: category,
                     price: price ? parseFloat(price) : null,
                     quantity: quantity ? parseInt(quantity) : null
                 };
@@ -463,80 +801,85 @@
             return product.price !== null && product.quantity !== null;
         }
 
+        // Atualizar o updateUI para mostrar categoria
         function updateUI() {
             const emptyState = document.getElementById('empty-state');
             const productList = document.getElementById('product-list');
             const totalSection = document.getElementById('total-section');
-            
             if (products.length === 0) {
                 emptyState.style.display = 'block';
                 productList.style.display = 'none';
                 totalSection.style.display = 'none';
                 return;
             }
-            
             emptyState.style.display = 'none';
             productList.style.display = 'block';
             totalSection.style.display = 'block';
-            
-            // Renderizar produtos
-            productList.innerHTML = products.map(product => {
-                const isComplete = isProductComplete(product);
-                const totalPrice = isComplete ? (product.price * product.quantity) : 0;
-                
-                return `
-                    <div class="product-item ${!isComplete ? 'incomplete-product' : ''}">
-                        <div class="product-header">
-                            <div class="product-info">
-                                <h3>
-                                    ${product.name}
-                                    ${!isComplete ? '<span class="incomplete-badge">Incompleto</span>' : ''}
-                                </h3>
-                                <div class="product-details">
-                                    ${isComplete 
-                                        ? `R$ ${product.price.toFixed(2)} × ${product.quantity}`
-                                        : 'Preço e quantidade não definidos'
-                                    }
+
+            // Agrupar produtos por categoria
+            const categorias = ['Alimentos', 'Cosméticos', 'Higiene', 'Limpeza', 'Outros'];
+            let html = '';
+            categorias.forEach(cat => {
+                const prods = products.filter(p => (p.category || 'Outros') === cat);
+                if (prods.length > 0) {
+                    html += `<h3 class='category-title' style='margin:18px 0 8px 0; color:#007aff;'>${cat}</h3>`;
+                    html += prods.map(product => {
+                        const isComplete = isProductComplete(product);
+                        const totalPrice = isComplete ? (product.price * product.quantity) : 0;
+                        return `
+                            <div class="product-item ${!isComplete ? 'incomplete-product' : ''}">
+                                <div class="product-header">
+                                    <div class="product-info">
+                                        <h3>
+                                            ${product.name}
+                                            ${!isComplete ? '<span class="incomplete-badge">Incompleto</span>' : ''}
+                                        </h3>
+                                        <div class="product-details">
+                                            ${isComplete 
+                                                ? `R$ ${product.price.toFixed(2)} × ${product.quantity}`
+                                                : 'Preço e quantidade não definidos'
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="product-total">
+                                        <div class="amount">
+                                            ${isComplete ? `R$ ${totalPrice.toFixed(2)}` : 'R$ 0,00'}
+                                        </div>
+                                        <div class="label">Total</div>
+                                    </div>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="edit-button" onclick="openModal(${product.id})">Editar</button>
+                                    <button class="delete-button" onclick="removeProduct(${product.id})">Remover</button>
                                 </div>
                             </div>
-                            <div class="product-total">
-                                <div class="amount">
-                                    ${isComplete ? `R$ ${totalPrice.toFixed(2)}` : 'R$ 0,00'}
-                                </div>
-                                <div class="label">Total</div>
-                            </div>
-                        </div>
-                        <div class="product-actions">
-                            <button class="edit-button" onclick="openModal(${product.id})">Editar</button>
-                            <button class="delete-button" onclick="removeProduct(${product.id})">Remover</button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-            
-            // Calcular e exibir total apenas de produtos completos
+                        `;
+                    }).join('');
+                }
+            });
+            productList.innerHTML = html;
+
             const total = products
                 .filter(isProductComplete)
                 .reduce((sum, product) => sum + (product.price * product.quantity), 0);
             document.getElementById('total-amount').textContent = `R$ ${total.toFixed(2)}`;
         }
 
-        // Event listeners
+        // Atualizar o submit do formulário
         document.getElementById('add-product-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const name = document.getElementById('product-name').value.trim();
+            const category = document.getElementById('product-category').value;
             const price = document.getElementById('product-price').value;
             const quantity = document.getElementById('product-quantity').value;
             const editId = document.getElementById('edit-id').value;
-            
             if (name) {
                 if (editId) {
                     // Modo edição
-                    editProduct(parseInt(editId), name, price, quantity);
+                    editProduct(parseInt(editId), name, category, price, quantity);
                 } else {
                     // Modo adição
-                    addProduct(name, price, quantity);
+                    addProduct(name, category);
                 }
             }
         });
@@ -553,7 +896,7 @@
         updateUI();
 
         // --- LOGIN SYSTEM ---
-        const USER = "Twgone";
+        const USER = "twgone";
         const PASS = "123";
 
         function login() {
@@ -567,6 +910,61 @@
             }
         }
         // --- FIM LOGIN SYSTEM ---
+
+        // --- TEMA ---
+        function applyTheme(theme) {
+            document.body.classList.remove('modern-green', 'modern-future', 'modern-advanced');
+            const loginCard = document.getElementById('login-card');
+            const loginTitle = document.getElementById('login-title');
+            const loginBtn = document.getElementById('login-btn');
+            if (theme === 'modern') {
+                document.body.classList.add('modern-advanced');
+                if (loginCard) {
+                    loginCard.style.background = 'rgba(10,25,47,0.98)';
+                    loginCard.style.boxShadow = '0 0 16px #1e274644';
+                    loginCard.style.border = '2px solid #3a506b';
+                }
+                if (loginTitle) {
+                    loginTitle.style.color = '#1e90ff';
+                    loginTitle.style.textShadow = '0 0 4px #3a506b';
+                }
+                if (loginBtn) {
+                    loginBtn.style.background = 'linear-gradient(90deg, #3a506b 0%, #1e90ff 100%)';
+                    loginBtn.style.color = '#e0e6ed';
+                    loginBtn.style.boxShadow = '0 0 8px #1e90ff33';
+                }
+            } else {
+                if (loginCard) {
+                    loginCard.style.background = '#fff';
+                    loginCard.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
+                    loginCard.style.border = '2px solid #007aff';
+                }
+                if (loginTitle) {
+                    loginTitle.style.color = '#007aff';
+                }
+                if (loginBtn) {
+                    loginBtn.style.background = '#007aff';
+                    loginBtn.style.color = '#fff';
+                    loginBtn.style.boxShadow = '0 0 8px #007aff44';
+                }
+            }
+        }
+        function setTheme(theme) {
+            localStorage.setItem('temaApp', theme);
+            applyTheme(theme);
+            closeThemeModal();
+        }
+        function openThemeModal() {
+            document.getElementById('theme-modal').style.display = 'flex';
+        }
+        function closeThemeModal() {
+            document.getElementById('theme-modal').style.display = 'none';
+        }
+        document.getElementById('theme-toggle').onclick = openThemeModal;
+        // Aplicar tema salvo ao carregar
+        const temaSalvo = localStorage.getItem('temaApp') || 'light';
+        applyTheme(temaSalvo);
+        // --- FIM TEMA ---
     </script>
 </body>
 </html> 
