@@ -361,6 +361,23 @@
         let nextId = 1;
         let editingId = null;
 
+        // Carregar produtos do LocalStorage ao iniciar
+        function loadProductsFromStorage() {
+            const saved = localStorage.getItem('produtosSalvos');
+            if (saved) {
+                products = JSON.parse(saved);
+                // Corrigir o nextId para evitar IDs duplicados
+                if (products.length > 0) {
+                    nextId = Math.max(...products.map(p => p.id)) + 1;
+                }
+            }
+        }
+
+        // Salvar produtos no LocalStorage
+        function saveProductsToStorage() {
+            localStorage.setItem('produtosSalvos', JSON.stringify(products));
+        }
+
         function openModal(productId = null) {
             editingId = productId;
             const modal = document.getElementById('modal');
@@ -414,6 +431,7 @@
             };
             
             products.push(product);
+            saveProductsToStorage();
             updateUI();
             closeModal();
         }
@@ -427,6 +445,7 @@
                     price: price ? parseFloat(price) : null,
                     quantity: quantity ? parseInt(quantity) : null
                 };
+                saveProductsToStorage();
                 updateUI();
                 closeModal();
             }
@@ -435,6 +454,7 @@
         function removeProduct(id) {
             if (confirm('Tem certeza que deseja remover este produto?')) {
                 products = products.filter(p => p.id !== id);
+                saveProductsToStorage();
                 updateUI();
             }
         }
@@ -528,12 +548,13 @@
             }
         });
 
-        // Inicializar UI
+        // Inicializar UI e carregar produtos salvos
+        loadProductsFromStorage();
         updateUI();
 
         // --- LOGIN SYSTEM ---
         const USER = "Twgone";
-        const PASS = "123456";
+        const PASS = "123";
 
         function login() {
             const u = document.getElementById('login-username').value;
