@@ -865,55 +865,44 @@
             border: 1.5px solid #222 !important;
             box-shadow: 0 0 0 2px #bbb !important;
         }
-        /* Login centralizado e responsivo premium */
+        /* Login centralizado e responsivo premium para mobile */
         .login-center {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            padding: 0 2vw;
         }
         #login-card {
-            min-width: 320px;
-            max-width: 95vw;
-            padding: 32px 28px 28px 28px;
-            border-radius: 14px;
+            min-width: 90vw;
+            max-width: 400px;
+            padding: 28px 6vw 24px 6vw;
+            border-radius: 16px;
             box-shadow: 0 4px 24px #0001;
             text-align: center;
             background: #fff;
             border: 1px solid #e3eefd;
             transition: background 0.2s, box-shadow 0.2s, border 0.2s;
         }
+        @media (min-width: 500px) {
+            #login-card { min-width: 320px; padding: 32px 28px 28px 28px; }
+        }
         #login-title {
             color: #222;
             font-family: 'Segoe UI', 'Orbitron', Arial, sans-serif;
             margin-bottom: 18px;
-            font-size: 1.6em;
+            font-size: 1.5em;
             font-weight: 700;
             letter-spacing: 1px;
         }
-        .login-theme-select {
-            margin-bottom: 18px;
-            text-align: left;
-        }
-        .login-theme-select label {
-            font-size: 1em;
-            color: #555;
-            margin-right: 8px;
-        }
-        .login-theme-select select {
-            padding: 4px 10px;
-            border-radius: 6px;
-            border: 1px solid #b3d4fc;
-            font-size: 1em;
-        }
         .login-input {
             width: 100%;
-            padding: 12px;
-            margin: 8px 0;
+            padding: 16px;
+            margin: 10px 0;
             border: 1.2px solid #d1d5db;
-            border-radius: 7px;
-            font-size: 1em;
+            border-radius: 8px;
+            font-size: 1.1em;
             background: #f7f7fa;
             color: #222;
             transition: border 0.2s, box-shadow 0.2s;
@@ -933,7 +922,7 @@
             font-size: 1.1em;
             letter-spacing: 1px;
             text-shadow: none;
-            padding: 12px 0;
+            padding: 16px 0;
             margin: 18px 0 0 0;
             width: 100%;
             display: block;
@@ -944,7 +933,6 @@
         #login-btn:hover {
             background: #005fcc;
         }
-        /* Tema moderno azul */
         .modern-advanced #login-card {
             background: #16213e;
             box-shadow: 0 4px 24px #1e274644;
@@ -970,7 +958,6 @@
         .modern-advanced #login-btn:hover {
             background: #1e90ff;
         }
-        /* Tema moderno branco/cinza */
         .modern-white #login-card {
             background: #fff;
             box-shadow: 0 4px 24px #bbb3;
@@ -1003,14 +990,6 @@
     <div id="login-container" class="login-center">
         <div id="login-card">
             <h2 id="login-title">Login</h2>
-            <div class="login-theme-select">
-                <label for="login-theme-select">Tema:</label>
-                <select id="login-theme-select" onchange="setTheme(this.value)">
-                    <option value="light">Básico</option>
-                    <option value="modern">Moderno Azul</option>
-                    <option value="modern-white">Moderno Branco/Cinza</option>
-                </select>
-            </div>
             <input type="text" id="login-username" placeholder="Usuário ou E-mail" class="login-input">
             <input type="password" id="login-password" placeholder="Senha" class="login-input">
             <button id="login-btn" onclick="login()">Entrar</button>
@@ -1098,24 +1077,6 @@
             <button onclick="closeThemeModal()" style="margin-top:10px; padding:6px 18px; border-radius:6px; border:none; background:#eee; color:#333; font-size:1em; cursor:pointer;">Fechar</button>
         </div>
     </div>
-
-    <!-- Menu de ajustes de tamanho dos títulos dos produtos -->
-    <div id="menu-ajustes" style="display:none; position:fixed; top:60px; right:16px; z-index:3000; background:#fff; border-radius:12px; box-shadow:0 2px 12px #0002; padding:24px 18px; min-width:220px;">
-        <h3 style="font-size:1.1em; color:#007aff; margin-bottom:12px;">Ajustes de Visual</h3>
-        <label for="tamanho-titulo-produto">Tamanho do título do produto:</label>
-        <select id="tamanho-titulo-produto" onchange="ajustarTamanhoTituloProduto()" style="width:100%; margin:10px 0 0 0; padding:8px; border-radius:6px;">
-            <option value="1em">Pequeno</option>
-            <option value="1.3em" selected>Médio</option>
-            <option value="1.7em">Grande</option>
-        </select>
-        <br><br>
-        <button onclick="document.getElementById('menu-ajustes').style.display='none'" style="background:#eee; color:#333; border:none; border-radius:6px; padding:6px 18px; margin-top:8px; cursor:pointer;">Fechar</button>
-    </div>
-    <button id="ajustes-toggle" style="position:fixed; top:16px; left:16px; background:#fff; color:#007aff; border:1px solid #007aff; border-radius:6px; padding:4px 12px; font-size:1em; cursor:pointer; z-index:3100;">Ajustes</button>
-
-    <footer id="dev-footer" style="width:100%; text-align:center; padding:12px 0; font-size:1em; background:rgba(0,0,0,0.04); color:#444; position:fixed; left:0; bottom:0; z-index:100;">
-        <span style="font-weight:500;">Desenvolvedor do software:</span> <span style="color:#007aff; font-weight:600;">twgone</span>
-    </footer>
 
     <script>
         let products = [];
@@ -1387,16 +1348,6 @@
         const temaSalvo = localStorage.getItem('temaApp') || 'light';
         applyTheme(temaSalvo);
         // --- FIM TEMA ---
-
-        // Menu de ajustes de tamanho dos títulos dos produtos
-        document.getElementById('ajustes-toggle').onclick = function() {
-            document.getElementById('menu-ajustes').style.display = 'block';
-        };
-        function ajustarTamanhoTituloProduto() {
-            var tamanho = document.getElementById('tamanho-titulo-produto').value;
-            var titulos = document.querySelectorAll('.product-info h3');
-            titulos.forEach(function(t) { t.style.fontSize = tamanho; });
-        }
 
         // Mostrar/esconder formulário de cadastro
         function showRegisterForm() {
