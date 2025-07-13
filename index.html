@@ -693,18 +693,328 @@
             background: linear-gradient(90deg, #1e90ff 0%, #223a5f 100%) !important;
             box-shadow: 0 4px 16px #1e90ff33 !important;
         }
+        /* Tema moderno branco/preto/cinza (super moderno, minimalista) */
+        .modern-white {
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            background: linear-gradient(135deg, #f7f7fa 0%, #e3e3e7 100%) !important;
+            color: #222 !important;
+        }
+        .modern-white .header {
+            background: linear-gradient(90deg, #fff 0%, #e3e3e7 100%) !important;
+            color: #222 !important;
+            letter-spacing: 2px;
+            text-shadow: 0 0 2px #bbb;
+            border-bottom: 2px solid #e3e3e7;
+            box-shadow: 0 2px 12px #e3e3e744;
+        }
+        .modern-white .container {
+            background: rgba(255,255,255,0.97) !important;
+            box-shadow: 0 4px 16px 0 #e3e3e7cc !important;
+            border-radius: 18px !important;
+            backdrop-filter: blur(4px);
+        }
+        .modern-white .add-button, .modern-white .edit-button, .modern-white .delete-button, .modern-white .add-product-btn, .modern-white #theme-toggle {
+            background: linear-gradient(90deg, #222 0%, #bbb 100%) !important;
+            color: #fff !important;
+            border: none !important;
+            box-shadow: 0 0 6px #bbb3 !important;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .modern-white .add-button:hover, .modern-white .edit-button:hover, .modern-white .delete-button:hover, .modern-white .add-product-btn:hover, .modern-white #theme-toggle:hover {
+            background: linear-gradient(90deg, #bbb 0%, #222 100%) !important;
+            color: #222 !important;
+            box-shadow: 0 0 12px #bbb5 !important;
+            transform: scale(1.05);
+        }
+        .modern-white .product-item {
+            border: 1.5px solid #e3e3e7 !important;
+            background: #f7f7fa !important;
+            box-shadow: 0 0 8px #e3e3e722;
+            border-radius: 14px !important;
+            transition: box-shadow 0.2s, border 0.2s;
+        }
+        .modern-white .product-item:hover {
+            box-shadow: 0 0 16px #bbb3, 0 0 4px #e3e3e7;
+            border: 1.5px solid #bbb !important;
+        }
+        .modern-white .category-title {
+            color: #222 !important;
+            text-shadow: 0 0 2px #bbb;
+        }
+        .modern-white .incomplete-badge {
+            background: #bbb !important;
+            color: #fff !important;
+            text-shadow: 0 0 2px #222;
+        }
+        .modern-white #dev-footer {
+            background: #e3e3e7 !important;
+            color: #222 !important;
+            border-top: 1.5px solid #bbb;
+        }
+        .modern-white #theme-modal-content {
+            background: #fff !important;
+            color: #222 !important;
+            box-shadow: 0 0 12px #e3e3e744;
+        }
+        .modern-white input, .modern-white select {
+            background: #f7f7fa !important;
+            color: #222 !important;
+            border: 1.5px solid #bbb !important;
+        }
+        .modern-white input:focus, .modern-white select:focus {
+            box-shadow: 0 0 0 2px #bbb !important;
+        }
+        .modern-white h3, .modern-white label {
+            color: #222 !important;
+            text-shadow: 0 0 2px #bbb;
+        }
+        .modern-white .modal-content {
+            border-radius: 18px !important;
+            box-shadow: 0 0 16px #e3e3e744;
+            background: #fff !important;
+        }
+        .modern-white .form-group select {
+            background: #f7f7fa !important;
+            color: #222 !important;
+        }
+        .modern-white .form-group select:focus {
+            box-shadow: 0 0 0 2px #bbb !important;
+        }
+        .modern-white .add-button {
+            border-radius: 50% !important;
+            font-size: 1.5em !important;
+        }
+        .modern-white .edit-button, .modern-white .delete-button {
+            border-radius: 6px !important;
+        }
+        .modern-white .product-info h3 {
+            text-shadow: 0 0 2px #bbb;
+        }
+        .modern-white .product-total .amount {
+            color: #222 !important;
+            text-shadow: 0 0 2px #bbb;
+        }
+        .modern-white .total-section {
+            background: #f7f7fa !important;
+            border-top: 1.5px solid #e3e3e7 !important;
+        }
+        .modern-white .total-amount {
+            color: #222 !important;
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            font-size: 1.2em !important;
+            text-shadow: 0 0 2px #bbb;
+        }
+        .modern-white .modal-content button, .modern-white .modal-content input, .modern-white .modal-content select {
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+        }
+        .modern-white .modal-content button {
+            letter-spacing: 1px;
+        }
+        .modern-white .modal-content {
+            animation: glassFadeIn 0.7s cubic-bezier(.4,2,.6,1) both;
+        }
+        /* Login card branco/cinza */
+        .modern-white #login-card {
+            background: #fff !important;
+            box-shadow: 0 4px 24px #bbb3 !important;
+            border: 2px solid #bbb !important;
+            border-radius: 16px !important;
+            padding: 32px 24px !important;
+            min-width: 280px !important;
+            text-align: center !important;
+        }
+        .modern-white #login-title {
+            color: #222 !important;
+            text-shadow: 0 0 2px #bbb !important;
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            margin-bottom: 18px !important;
+        }
+        .modern-white #login-btn {
+            background: linear-gradient(90deg, #bbb 0%, #222 100%) !important;
+            color: #fff !important;
+            box-shadow: 0 2px 8px #bbb3 !important;
+            border-radius: 10px !important;
+            border: none !important;
+            font-weight: 700 !important;
+            font-size: 1.1em !important;
+            letter-spacing: 1px !important;
+            text-shadow: none !important;
+            padding: 12px 32px !important;
+            margin: 14px 0 0 0 !important;
+            width: 90% !important;
+            display: block !important;
+            cursor: pointer !important;
+            font-family: 'Orbitron', Segoe UI, Arial, sans-serif !important;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s !important;
+        }
+        .modern-white #login-btn:hover {
+            background: linear-gradient(90deg, #222 0%, #bbb 100%) !important;
+            box-shadow: 0 4px 16px #bbb3 !important;
+        }
+        .modern-white #login-card input {
+            background: #f7f7fa !important;
+            color: #222 !important;
+            border: 1.5px solid #bbb !important;
+            border-radius: 8px !important;
+            font-size: 1em !important;
+            padding: 12px !important;
+            margin: 8px 0 !important;
+            width: 90% !important;
+        }
+        .modern-white #login-card input:focus {
+            border: 1.5px solid #222 !important;
+            box-shadow: 0 0 0 2px #bbb !important;
+        }
+        /* Login centralizado e responsivo premium */
+        .login-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #login-card {
+            min-width: 320px;
+            max-width: 95vw;
+            padding: 32px 28px 28px 28px;
+            border-radius: 14px;
+            box-shadow: 0 4px 24px #0001;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #e3eefd;
+            transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+        }
+        #login-title {
+            color: #222;
+            font-family: 'Segoe UI', 'Orbitron', Arial, sans-serif;
+            margin-bottom: 18px;
+            font-size: 1.6em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .login-theme-select {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .login-theme-select label {
+            font-size: 1em;
+            color: #555;
+            margin-right: 8px;
+        }
+        .login-theme-select select {
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #b3d4fc;
+            font-size: 1em;
+        }
+        .login-input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1.2px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 1em;
+            background: #f7f7fa;
+            color: #222;
+            transition: border 0.2s, box-shadow 0.2s;
+            display: block;
+        }
+        .login-input:focus {
+            border: 1.2px solid #007aff;
+            box-shadow: 0 0 0 2px #b3d4fc;
+        }
+        #login-btn {
+            background: #007aff;
+            color: #fff;
+            box-shadow: 0 2px 8px #007aff11;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            text-shadow: none;
+            padding: 12px 0;
+            margin: 18px 0 0 0;
+            width: 100%;
+            display: block;
+            cursor: pointer;
+            font-family: 'Segoe UI', 'Orbitron', Arial, sans-serif;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        #login-btn:hover {
+            background: #005fcc;
+        }
+        /* Tema moderno azul */
+        .modern-advanced #login-card {
+            background: #16213e;
+            box-shadow: 0 4px 24px #1e274644;
+            border: 1px solid #223a5f;
+        }
+        .modern-advanced #login-title {
+            color: #1e90ff;
+        }
+        .modern-advanced .login-input {
+            background: #1e2746;
+            color: #e0e6ed;
+            border: 1.2px solid #3a506b;
+        }
+        .modern-advanced .login-input:focus {
+            border: 1.2px solid #1e90ff;
+            box-shadow: 0 0 0 2px #1e90ff;
+        }
+        .modern-advanced #login-btn {
+            background: #223a5f;
+            color: #fff;
+            box-shadow: 0 2px 8px #1e274633;
+        }
+        .modern-advanced #login-btn:hover {
+            background: #1e90ff;
+        }
+        /* Tema moderno branco/cinza */
+        .modern-white #login-card {
+            background: #fff;
+            box-shadow: 0 4px 24px #bbb3;
+            border: 1px solid #bbb;
+        }
+        .modern-white #login-title {
+            color: #222;
+        }
+        .modern-white .login-input {
+            background: #f7f7fa;
+            color: #222;
+            border: 1.2px solid #bbb;
+        }
+        .modern-white .login-input:focus {
+            border: 1.2px solid #222;
+            box-shadow: 0 0 0 2px #bbb;
+        }
+        .modern-white #login-btn {
+            background: #222;
+            color: #fff;
+            box-shadow: 0 2px 8px #bbb3;
+        }
+        .modern-white #login-btn:hover {
+            background: #bbb;
+            color: #222;
+        }
     </style>
 </head>
 <body>
-    <div id="login-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
-        <div id="login-card" style="background: #fff; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); min-width: 280px; text-align: center; border: 2px solid #ff512f; transition: background 0.3s, box-shadow 0.3s, border 0.3s;">
-            <h2 id="login-title" style="color: #ff512f; margin-bottom: 18px; font-family: 'Orbitron', Segoe UI, Arial, sans-serif; letter-spacing: 1px;">Login</h2>
-            <input type="text" id="login-username" placeholder="Usuário" style="width: 90%; padding: 12px; margin: 8px 0; border: 1.5px solid #ff512f; border-radius: 8px; font-size: 1em; background: #1a0000; color: #fff; transition: border 0.2s, box-shadow 0.2s;">
-            <br>
-            <input type="password" id="login-password" placeholder="Senha" style="width: 90%; padding: 12px; margin: 8px 0; border: 1.5px solid #ff512f; border-radius: 8px; font-size: 1em; background: #1a0000; color: #fff; transition: border 0.2s, box-shadow 0.2s;">
-            <br>
+    <div id="login-container" class="login-center">
+        <div id="login-card">
+            <h2 id="login-title">Login</h2>
+            <div class="login-theme-select">
+                <label for="login-theme-select">Tema:</label>
+                <select id="login-theme-select" onchange="setTheme(this.value)">
+                    <option value="light">Básico</option>
+                    <option value="modern">Moderno Azul</option>
+                    <option value="modern-white">Moderno Branco/Cinza</option>
+                </select>
+            </div>
+            <input type="text" id="login-username" placeholder="Usuário ou E-mail" class="login-input">
+            <input type="password" id="login-password" placeholder="Senha" class="login-input">
             <button id="login-btn" onclick="login()">Entrar</button>
-            <div id="loginMsg" style="color: #ff512f; min-height: 20px; margin-top: 8px;"></div>
+            <div id="loginMsg"></div>
         </div>
     </div>
     <div class="container" id="app-container" style="display:none;">
@@ -783,10 +1093,25 @@
             <h3 style="margin-bottom:18px; color:#007aff;">Escolha o visual</h3>
             <button onclick="setTheme('light')" style="margin:8px; padding:10px 24px; border-radius:8px; border:1px solid #007aff; background:#fff; color:#007aff; font-size:1em; cursor:pointer;">Básico</button>
             <button onclick="setTheme('modern')" style="margin:8px; padding:10px 24px; border-radius:8px; border:1px solid #6a00f4; background:linear-gradient(90deg,#6a00f4,#a259ff,#00eaff); color:#fff; font-size:1em; cursor:pointer; box-shadow:0 0 8px #a259ff99;">Moderno</button>
+            <button onclick="setTheme('modern-white')" style="margin:8px; padding:10px 24px; border-radius:8px; border:1px solid #bbb; background:linear-gradient(90deg,#fff,#bbb); color:#222; font-size:1em; cursor:pointer; box-shadow:0 0 8px #bbb3;">Moderno Branco/Cinza</button>
             <br><br>
             <button onclick="closeThemeModal()" style="margin-top:10px; padding:6px 18px; border-radius:6px; border:none; background:#eee; color:#333; font-size:1em; cursor:pointer;">Fechar</button>
         </div>
     </div>
+
+    <!-- Menu de ajustes de tamanho dos títulos dos produtos -->
+    <div id="menu-ajustes" style="display:none; position:fixed; top:60px; right:16px; z-index:3000; background:#fff; border-radius:12px; box-shadow:0 2px 12px #0002; padding:24px 18px; min-width:220px;">
+        <h3 style="font-size:1.1em; color:#007aff; margin-bottom:12px;">Ajustes de Visual</h3>
+        <label for="tamanho-titulo-produto">Tamanho do título do produto:</label>
+        <select id="tamanho-titulo-produto" onchange="ajustarTamanhoTituloProduto()" style="width:100%; margin:10px 0 0 0; padding:8px; border-radius:6px;">
+            <option value="1em">Pequeno</option>
+            <option value="1.3em" selected>Médio</option>
+            <option value="1.7em">Grande</option>
+        </select>
+        <br><br>
+        <button onclick="document.getElementById('menu-ajustes').style.display='none'" style="background:#eee; color:#333; border:none; border-radius:6px; padding:6px 18px; margin-top:8px; cursor:pointer;">Fechar</button>
+    </div>
+    <button id="ajustes-toggle" style="position:fixed; top:16px; left:16px; background:#fff; color:#007aff; border:1px solid #007aff; border-radius:6px; padding:4px 12px; font-size:1em; cursor:pointer; z-index:3100;">Ajustes</button>
 
     <footer id="dev-footer" style="width:100%; text-align:center; padding:12px 0; font-size:1em; background:rgba(0,0,0,0.04); color:#444; position:fixed; left:0; bottom:0; z-index:100;">
         <span style="font-weight:500;">Desenvolvedor do software:</span> <span style="color:#007aff; font-weight:600;">twgone</span>
@@ -1014,13 +1339,34 @@
 
         // --- TEMA ---
         function applyTheme(theme) {
-            document.body.classList.remove('modern-green', 'modern-future', 'modern-advanced');
+            document.body.classList.remove('modern-green', 'modern-future', 'modern-advanced', 'modern-white');
             const loginCard = document.getElementById('login-card');
             const loginTitle = document.getElementById('login-title');
             const loginBtn = document.getElementById('login-btn');
             if (theme === 'modern') {
                 document.body.classList.add('modern-advanced');
                 if (loginBtn) loginBtn.classList.add('login-btn-modern');
+            } else if (theme === 'modern-white') {
+                document.body.classList.add('modern-white');
+                if (loginBtn) {
+                    loginBtn.classList.remove('login-btn-modern');
+                    loginBtn.style.background = 'linear-gradient(90deg, #bbb 0%, #222 100%)';
+                    loginBtn.style.color = '#fff';
+                    loginBtn.style.boxShadow = '0 2px 8px #bbb3';
+                    loginBtn.style.borderRadius = '10px';
+                    loginBtn.style.border = 'none';
+                    loginBtn.style.fontWeight = '700';
+                    loginBtn.style.fontSize = '1.1em';
+                    loginBtn.style.letterSpacing = '1px';
+                    loginBtn.style.textShadow = 'none';
+                    loginBtn.style.padding = '12px 32px';
+                    loginBtn.style.margin = '14px 0 0 0';
+                    loginBtn.style.width = '90%';
+                    loginBtn.style.display = 'block';
+                    loginBtn.style.cursor = 'pointer';
+                    loginBtn.style.fontFamily = "'Orbitron', Segoe UI, Arial, sans-serif";
+                    loginBtn.style.transition = 'background 0.2s, box-shadow 0.2s, transform 0.1s';
+                }
             } else {
                 if (loginBtn) loginBtn.classList.remove('login-btn-modern');
             }
@@ -1041,6 +1387,42 @@
         const temaSalvo = localStorage.getItem('temaApp') || 'light';
         applyTheme(temaSalvo);
         // --- FIM TEMA ---
+
+        // Menu de ajustes de tamanho dos títulos dos produtos
+        document.getElementById('ajustes-toggle').onclick = function() {
+            document.getElementById('menu-ajustes').style.display = 'block';
+        };
+        function ajustarTamanhoTituloProduto() {
+            var tamanho = document.getElementById('tamanho-titulo-produto').value;
+            var titulos = document.querySelectorAll('.product-info h3');
+            titulos.forEach(function(t) { t.style.fontSize = tamanho; });
+        }
+
+        // Mostrar/esconder formulário de cadastro
+        function showRegisterForm() {
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('show-register-btn').style.display = 'none';
+        }
+        function hideRegisterForm() {
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('show-register-btn').style.display = 'inline-block';
+        }
+        // Estrutura para cadastro (integração Firebase será feita depois)
+        function registerUser() {
+            var email = document.getElementById('register-email').value;
+            var pass1 = document.getElementById('register-password').value;
+            var pass2 = document.getElementById('register-password2').value;
+            var msg = document.getElementById('registerMsg');
+            if (!email || !pass1 || !pass2) {
+                msg.innerText = 'Preencha todos os campos.';
+                return;
+            }
+            if (pass1 !== pass2) {
+                msg.innerText = 'As senhas não coincidem.';
+                return;
+            }
+            msg.innerText = 'Cadastro em breve! (Firebase)';
+        }
     </script>
 </body>
 </html> 
