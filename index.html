@@ -1,1 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ebook Vida Financeira 2026 | Organize, Economize e Aumente sua Renda</title>
+  <meta name="description" content="Aprenda a organizar seu dinheiro, reduzir desperdícios e aumentar sua renda com um plano simples e prático para iniciantes." />
+  <style>
+    :root {
+      --bg: #f4f6fa;
+      --surface: #fbfcfe;
+      --card: #ffffff;
+      --text: #141b2a;
+      --muted: #5a6578;
+      --border: #dbe2ed;
+      --primary: #3f46d8;
+      --primary-hover: #3137bf;
+      --ok: #12805c;
+      --shadow: 0 12px 32px rgba(20, 27, 42, 0.09);
+      --radius: 16px;
+    }
 
+    body[data-theme="dark"] {
+      --bg: #0d131d;
+      --surface: #111a28;
+      --card: #162133;
+      --text: #e8eef8;
+      --muted: #a8b3c6;
+      --border: #27344a;
+      --primary: #7480ff;
+      --primary-hover: #5f6cf2;
+      --ok: #2fb188;
+      --shadow: 0 14px 38px rgba(0, 0, 0, 0.36);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Inter, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg), var(--surface));
+      line-height: 1.6;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      backdrop-filter: blur(8px);
+      transition: background-color .25s ease, border-color .25s ease;
+    }
+
+    .topbar-row {
+      min-height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: .98rem;
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .2s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+    }
+
+    .theme-btn:hover { transform: translateY(-1px); }
+
+    .section { padding: 52px 0; }
+    .section-tight { padding: 38px 0; }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 14px 0 12px;
+      font-size: clamp(1.95rem, 4.8vw, 3rem);
+      line-height: 1.13;
+      letter-spacing: -0.02em;
+      max-width: 820px;
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 1.07rem;
+    }
+
+    .hero-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      transition: background-color .25s ease, border-color .25s ease;
+    }
+
+    .title {
+      margin: 0 0 8px;
+      font-size: clamp(1.45rem, 2.7vw, 1.95rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .list li {
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border-radius: 12px;
+      padding: 12px 13px;
+      font-weight: 650;
+    }
+
+    .check {
+      color: var(--ok);
+      margin-right: 7px;
+      font-weight: 900;
+    }
+
+    .offer-old {
+      margin: 0;
+      color: #cd4c4c;
+      text-decoration: line-through;
+      font-weight: 700;
+    }
+
+    .offer-new {
+      margin: 6px 0 2px;
+      font-size: 2rem;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .offer-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+      font-weight: 700;
+    }
+
+    .actions {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      min-height: 52px;
+      border-radius: 999px;
+      padding: 0 18px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #f5f7ff;
+    }
+
+    .btn-primary:hover { background: var(--primary-hover); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .micro {
+      margin-top: 6px;
+      text-align: center;
+      font-size: .88rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .cards-3 .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.03rem;
+    }
+
+    .cards-3 .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .step strong {
+      color: var(--primary);
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .proof {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .proof .card p { margin: 0; color: var(--muted); }
+
+    .cta-box {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    footer {
+      padding: 24px 0 84px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 35;
+      border-top: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      backdrop-filter: blur(8px);
+      padding: 10px 14px;
+    }
+
+    .sticky-cta .btn { width: 100%; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .cards-3, .steps, .proof { grid-template-columns: 1fr; }
+      .sticky-cta { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-row">
+      <div class="brand">Ebook Vida Financeira 2026</div>
+      <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">Modo escuro</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="hero-badge">Guia prático para iniciantes</span>
+        <h1>Organize seu dinheiro e aumente sua renda com um plano simples para aplicar no dia a dia.</h1>
+        <p class="hero-subtitle">
+          Sem promessas irreais: você aprende como controlar gastos, criar novas fontes de renda e tomar decisões financeiras melhores, mesmo começando do zero.
+        </p>
+
+        <div class="hero-grid">
+          <div class="card" aria-label="Benefícios">
+            <ul class="list">
+              <li><span class="check">✓</span>Entender para onde seu dinheiro está indo.</li>
+              <li><span class="check">✓</span>Reduzir desperdícios sem perder qualidade de vida.</li>
+              <li><span class="check">✓</span>Criar renda extra com ações possíveis na sua rotina.</li>
+              <li><span class="check">✓</span>Manter constância com um método simples e claro.</li>
+            </ul>
+          </div>
+
+          <aside class="card" aria-label="Oferta">
+            <p class="offer-old">de R$ 97,00</p>
+            <p class="offer-new">por R$ 29,90</p>
+            <p class="offer-note">Acesso imediato após confirmação do pagamento.</p>
+
+            <div class="actions">
+              <a class="btn btn-primary" href="https://pay.cakto.com.br/jqdr7js_714690">Quero meu ebook agora</a>
+              <a class="btn btn-secondary" href="#como-funciona">Ver como funciona</a>
+            </div>
+            <p class="micro">Checkout seguro • Produto digital</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="beneficios">
+      <div class="container">
+        <h2 class="title">O que você vai aprender no ebook</h2>
+        <p class="subtitle">Conteúdo direto ao ponto para melhorar sua vida financeira de forma realista.</p>
+        <div class="cards-3">
+          <article class="card">
+            <h3>Controle financeiro simples</h3>
+            <p>Um passo a passo para organizar entradas, saídas e prioridades do mês.</p>
+          </article>
+          <article class="card">
+            <h3>Renda extra prática</h3>
+            <p>Estratégias para aumentar renda sem depender de soluções milagrosas.</p>
+          </article>
+          <article class="card">
+            <h3>Consistência</h3>
+            <p>Como manter o plano funcionando sem complicação ou excesso de teoria.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="como-funciona">
+      <div class="container">
+        <h2 class="title">Como funciona (simples)</h2>
+        <div class="steps">
+          <div class="step">
+            <strong>Passo 1</strong>
+            <p>Você faz um diagnóstico rápido da sua situação atual.</p>
+          </div>
+          <div class="step">
+            <strong>Passo 2</strong>
+            <p>Aplica o método para organizar gastos e abrir espaço no orçamento.</p>
+          </div>
+          <div class="step">
+            <strong>Passo 3</strong>
+            <p>Implementa ações de renda extra e mantém rotina de evolução semanal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <h2 class="title">Por que este conteúdo é confiável</h2>
+        <div class="proof">
+          <div class="card">
+            <p>Linguagem simples para iniciantes e foco em execução prática.</p>
+          </div>
+          <div class="card">
+            <p>Foco em resultados possíveis: clareza, organização e progresso contínuo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="title">Comece hoje a melhorar sua vida financeira</h2>
+          <p class="subtitle" style="margin:0 auto 16px;">Se você quer um plano claro para sair do aperto e evoluir com consistência, este ebook foi feito para você.</p>
+          <a class="btn btn-primary" href="https://pay.cakto.com.br/jqdr7js_714690">Comprar com acesso imediato</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 • Ebook digital educativo</div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a class="btn btn-primary" href="https://pay.cakto.com.br/jqdr7js_714690">Comprar agora</a>
+  </div>
+
+  <script>
+    (function () {
+      const key = "ebook_theme_pref";
+      const btn = document.getElementById("themeToggle");
+      const stored = localStorage.getItem(key);
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      function setTheme(theme) {
+        document.body.setAttribute("data-theme", theme);
+        const isDark = theme === "dark";
+        btn.setAttribute("aria-pressed", String(isDark));
+        btn.textContent = isDark ? "Modo claro" : "Modo escuro";
+      }
+
+      setTheme(stored ? stored : (prefersDark ? "dark" : "light"));
+
+      btn.addEventListener("click", function () {
+        const current = document.body.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        const next = current === "dark" ? "light" : "dark";
+        localStorage.setItem(key, next);
+        setTheme(next);
+      });
+    })();
+  </script>
+</body>
+</html>
