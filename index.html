@@ -1,929 +1,581 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Como Ficar Rico em 2026 | O Método Secreto</title>
-  <meta name="description" content="Descubra o método secreto que pessoas comuns estão usando para criar renda online em 2026. Comece do zero e alcance a liberdade financeira." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #050508;
-      --purple: #7b2fff;
-      --purple-light: #a855f7;
-      --blue: #00cfff;
-      --green: #00ff99;
-      --dark-card: #0d0d1a;
-      --border: rgba(123, 47, 255, 0.35);
-      --text: #e2e8f0;
-      --text-dim: #94a3b8;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Como Ficar Rico em 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a84c;
+  --gold-light:#f0d080;
+  --gold-pale:#e8c96a;
+  --black:#07070a;
+  --black2:#0f0f14;
+  --black3:#16161e;
+  --white:#f5f0e8;
+  --gray:#7a7a8a;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#000}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
 
-    /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #050508; }
-    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+/* ─── GOLD TEXT ─── */
+.gold{background:linear-gradient(120deg,#b8860b,#f0d080,#c9a84c,#ffe066,#b8860b);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s linear infinite}
+@keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:300% 50%}}
 
-    /* ===== PARTICLES CANVAS ===== */
-    #particles-canvas {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none; z-index: 0;
-      opacity: 0.5;
-    }
+/* ─── CANVAS ─── */
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 
-    /* ===== NAVBAR ===== */
-    nav {
-      position: fixed; top: 0; left: 0; width: 100%;
-      z-index: 100;
-      padding: 1rem 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      backdrop-filter: blur(16px);
-      background: rgba(5, 5, 8, 0.75);
-      border-bottom: 1px solid var(--border);
-      transition: all 0.3s;
-    }
-    .nav-logo {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 900;
-      background: linear-gradient(90deg, var(--purple), var(--blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .nav-cta {
-      display: inline-block;
-      padding: 0.5rem 1.4rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      background: linear-gradient(135deg, var(--purple), var(--blue));
-      color: #fff;
-      box-shadow: 0 0 18px rgba(123, 47, 255, 0.6);
-      transition: box-shadow 0.3s, transform 0.2s;
-    }
-    .nav-cta:hover {
-      box-shadow: 0 0 32px rgba(0, 207, 255, 0.8);
-      transform: scale(1.05);
-    }
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(7,7,10,.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.12)}
+.nav-logo{font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.nav-cta{padding:10px 24px;background:linear-gradient(135deg,#b8860b,#f0d080);color:#07070a;font-weight:700;font-size:.8rem;border-radius:100px;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:transform .2s,box-shadow .2s;box-shadow:0 0 20px rgba(201,168,76,.3)}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 0 40px rgba(201,168,76,.5)}
 
-    /* ===== SECTIONS ===== */
-    section { position: relative; z-index: 1; }
+/* ─── HERO ─── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;z-index:1;overflow:hidden}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:8px 22px;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:40px;animation:fadeDown .8s ease both}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);font-weight:900;line-height:1.05;letter-spacing:-.04em;margin-bottom:28px;animation:fadeUp .9s .2s ease both}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:rgba(245,240,232,.55);line-height:1.75;max-width:580px;margin:0 auto 56px;font-weight:300;animation:fadeUp .9s .35s ease both}
+.btn-gold{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#b8860b 0%,#f0d080 50%,#b8860b 100%);background-size:200% 100%;color:#07070a;font-weight:800;font-size:1.05rem;padding:20px 52px;border-radius:100px;text-decoration:none;letter-spacing:.03em;transition:background-position .5s,transform .25s,box-shadow .25s;box-shadow:0 0 50px rgba(201,168,76,.35),0 8px 32px rgba(0,0,0,.6);animation:fadeUp .9s .5s ease both}
+.btn-gold:hover{background-position:100% 0;transform:scale(1.05) translateY(-3px);box-shadow:0 0 80px rgba(201,168,76,.55),0 16px 48px rgba(0,0,0,.7)}
+.btn-gold svg{transition:transform .3s}
+.btn-gold:hover svg{transform:translateX(5px)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeIn 1.5s 1.2s ease both}
+.scroll-text{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,168,76,.4)}
+.scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,rgba(201,168,76,.5),transparent);animation:scrollAnim 2s ease-in-out infinite}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-    /* ===== HERO ===== */
-    #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 6rem 1.5rem 4rem;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(123,47,255,0.35) 0%, transparent 70%),
-                  radial-gradient(ellipse 60% 50% at 80% 100%, rgba(0,207,255,0.2) 0%, transparent 70%);
-      overflow: hidden;
-    }
-    .hero-badge {
-      display: inline-block;
-      padding: 0.35rem 1.1rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border: 1px solid var(--green);
-      color: var(--green);
-      text-shadow: 0 0 8px var(--green);
-      margin-bottom: 1.5rem;
-      animation: pulse-badge 2.5s infinite;
-    }
-    @keyframes pulse-badge {
-      0%,100% { box-shadow: 0 0 8px rgba(0,255,153,0.4); }
-      50% { box-shadow: 0 0 20px rgba(0,255,153,0.9); }
-    }
-    .hero-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 5.5vw, 4.2rem);
-      font-weight: 900;
-      line-height: 1.12;
-      max-width: 900px;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #fff 20%, var(--blue) 55%, var(--purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 24px rgba(0,207,255,0.5));
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: var(--text-dim);
-      max-width: 640px;
-      margin-bottom: 2.5rem;
-    }
-    .hero-sub span { color: var(--blue); font-weight: 600; }
+/* ─── DIVIDER ─── */
+.gold-line{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.4),transparent);margin:0}
 
-    /* ===== CTA BUTTON ===== */
-    .btn-cta {
-      display: inline-block;
-      padding: 1.1rem 2.8rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: linear-gradient(135deg, var(--purple), var(--blue));
-      color: #fff;
-      box-shadow: 0 0 30px rgba(123, 47, 255, 0.7), 0 0 60px rgba(0, 207, 255, 0.3);
-      animation: pulse-btn 2s infinite;
-      transition: transform 0.2s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-    .btn-cta:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 50px rgba(123, 47, 255, 0.95), 0 0 100px rgba(0, 207, 255, 0.5);
-    }
-    @keyframes pulse-btn {
-      0%,100% { box-shadow: 0 0 30px rgba(123,47,255,0.7), 0 0 60px rgba(0,207,255,0.3); }
-      50% { box-shadow: 0 0 55px rgba(123,47,255,1), 0 0 100px rgba(0,207,255,0.6); }
-    }
-    .btn-cta-green {
-      background: linear-gradient(135deg, #00c97a, var(--green));
-      box-shadow: 0 0 30px rgba(0,255,153,0.7), 0 0 60px rgba(0,255,153,0.3);
-      animation: pulse-btn-green 2s infinite;
-    }
-    .btn-cta-green:hover {
-      box-shadow: 0 0 55px rgba(0,255,153,1), 0 0 100px rgba(0,255,153,0.5);
-    }
-    @keyframes pulse-btn-green {
-      0%,100% { box-shadow: 0 0 30px rgba(0,255,153,0.7), 0 0 60px rgba(0,255,153,0.3); }
-      50% { box-shadow: 0 0 55px rgba(0,255,153,1), 0 0 100px rgba(0,255,153,0.5); }
-    }
-    .hero-note {
-      margin-top: 1.2rem;
-      font-size: 0.82rem;
-      color: var(--text-dim);
-    }
-    .hero-note span { color: var(--green); }
+/* ─── PAIN SECTION ─── */
+.pain{position:relative;z-index:1;padding:120px 24px;background:linear-gradient(180deg,var(--black) 0%,var(--black2) 100%)}
+.pain .container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.label{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.title{font-size:clamp(1.9rem,4vw,3.2rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;margin-bottom:20px}
+.sub{font-size:1rem;color:rgba(245,240,232,.5);line-height:1.8;font-weight:300;margin-bottom:32px}
+.pain-cards{display:flex;flex-direction:column;gap:14px}
+.pain-card{display:flex;align-items:center;gap:18px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:16px;padding:20px 24px;transition:border-color .3s,background .3s,transform .3s}
+.pain-card:hover{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.08);transform:translateX(6px)}
+.pain-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pain-icon svg{stroke:var(--gold-pale)}
+.pain-text{font-size:.95rem;font-weight:500;color:var(--white)}
+.pain-text small{display:block;font-size:.8rem;font-weight:400;color:var(--gray);margin-top:3px}
 
-    /* Chart bars animation */
-    .hero-chart {
-      display: flex; align-items: flex-end; justify-content: center;
-      gap: 8px; margin-top: 3.5rem;
-      height: 80px;
-    }
-    .bar {
-      width: 18px; border-radius: 4px 4px 0 0;
-      background: linear-gradient(180deg, var(--green), var(--blue));
-      box-shadow: 0 0 10px var(--green);
-      animation: bar-grow 1.5s ease both;
-    }
-    .bar:nth-child(1) { height: 30%; animation-delay: 0s; }
-    .bar:nth-child(2) { height: 45%; animation-delay: 0.1s; }
-    .bar:nth-child(3) { height: 55%; animation-delay: 0.2s; }
-    .bar:nth-child(4) { height: 70%; animation-delay: 0.3s; }
-    .bar:nth-child(5) { height: 60%; animation-delay: 0.4s; }
-    .bar:nth-child(6) { height: 80%; animation-delay: 0.5s; }
-    .bar:nth-child(7) { height: 95%; animation-delay: 0.6s; }
-    .bar:nth-child(8) { height: 100%; animation-delay: 0.7s; }
-    @keyframes bar-grow {
-      from { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
-      to   { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-    }
+/* ─── SOLUTION ─── */
+.solution{position:relative;z-index:1;padding:120px 24px;background:var(--black2);text-align:center}
+.solution-inner{max-width:820px;margin:0 auto}
+.solution-box{margin-top:56px;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.18);border-radius:32px;padding:60px;position:relative;overflow:hidden}
+.solution-box::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(201,168,76,.12),transparent 70%);border-radius:50%}
+.solution-box p{font-size:1.15rem;color:rgba(245,240,232,.8);line-height:1.9;font-weight:300}
+.solution-box strong{color:var(--gold-pale);font-weight:600}
 
-    /* ===== SECTION TITLES ===== */
-    .section-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.6rem, 4vw, 2.7rem);
-      font-weight: 900;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .glow-purple { color: var(--purple-light); text-shadow: 0 0 20px rgba(168,85,247,0.7); }
-    .glow-blue   { color: var(--blue); text-shadow: 0 0 20px rgba(0,207,255,0.7); }
-    .glow-green  { color: var(--green); text-shadow: 0 0 20px rgba(0,255,153,0.7); }
-    .section-sub {
-      text-align: center;
-      color: var(--text-dim);
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin: 0 auto 3rem;
-    }
+/* ─── BENEFITS ─── */
+.benefits{position:relative;z-index:1;padding:120px 24px;background:var(--black)}
+.benefits-header{text-align:center;margin-bottom:72px}
+.benefits-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.bcard{background:var(--black2);border:1px solid rgba(201,168,76,.1);border-radius:24px;padding:40px 32px;position:relative;overflow:hidden;transition:transform .4s,border-color .4s,box-shadow .4s;cursor:default}
+.bcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.12),transparent);opacity:0;transition:opacity .4s;border-radius:24px}
+.bcard:hover{transform:translateY(-10px);border-color:rgba(201,168,76,.4);box-shadow:0 20px 60px rgba(201,168,76,.12),0 0 0 1px rgba(201,168,76,.15)}
+.bcard:hover::after{opacity:1}
+.bcard-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(201,168,76,.2),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1}
+.bcard-icon svg{stroke:var(--gold-pale)}
+.bcard-title{font-size:1.05rem;font-weight:700;margin-bottom:10px;position:relative;z-index:1}
+.bcard-desc{font-size:.88rem;color:var(--gray);line-height:1.7;position:relative;z-index:1}
 
-    /* ===== DOR ===== */
-    #dor {
-      padding: 5rem 1.5rem;
-      background: linear-gradient(180deg, rgba(123,47,255,0.05) 0%, transparent 100%);
-    }
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .pain-card {
-      background: var(--dark-card);
-      border: 1px solid rgba(123,47,255,0.25);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      display: flex; gap: 1rem; align-items: flex-start;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    }
-    .pain-card:hover {
-      border-color: var(--purple);
-      box-shadow: 0 0 25px rgba(123,47,255,0.3);
-      transform: translateY(-4px);
-    }
-    .pain-icon { font-size: 2rem; flex-shrink: 0; }
-    .pain-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff; }
-    .pain-card p { font-size: 0.92rem; color: var(--text-dim); }
+/* ─── STEPS ─── */
+.steps-sec{position:relative;z-index:1;padding:120px 24px;background:var(--black2)}
+.steps-sec .container{max-width:1100px;margin:0 auto}
+.steps-sec .header{text-align:center;margin-bottom:80px}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps-row::before{content:'';position:absolute;top:34px;left:calc(12.5%);right:calc(12.5%);height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.25) 20%,rgba(201,168,76,.25) 80%,transparent);z-index:0}
+.step-item{text-align:center;padding:0 20px;position:relative;z-index:1}
+.step-num{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#b8860b,#f0d080);color:#07070a;font-size:1.4rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 0 30px rgba(201,168,76,.3)}
+.step-title{font-size:.95rem;font-weight:700;margin-bottom:10px;color:var(--white)}
+.step-desc{font-size:.82rem;color:var(--gray);line-height:1.6}
 
-    /* ===== SOLUTION ===== */
-    #solucao {
-      padding: 5rem 1.5rem;
-      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,207,255,0.1) 0%, transparent 70%);
-    }
-    .sol-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .sol-card {
-      background: var(--dark-card);
-      border: 1px solid rgba(0,207,255,0.2);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    }
-    .sol-card:hover {
-      border-color: var(--blue);
-      box-shadow: 0 0 25px rgba(0,207,255,0.35);
-      transform: translateY(-6px);
-    }
-    .sol-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      display: block;
-      filter: drop-shadow(0 0 8px var(--blue));
-    }
-    .sol-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--blue); }
-    .sol-card p { font-size: 0.9rem; color: var(--text-dim); }
+/* ─── TESTIMONIALS ─── */
+.testi{position:relative;z-index:1;padding:120px 24px;background:var(--black)}
+.testi .header{text-align:center;margin-bottom:72px}
+.testi-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.tcard{background:var(--black2);border:1px solid rgba(201,168,76,.1);border-radius:24px;padding:36px;transition:transform .35s,border-color .35s,box-shadow .35s}
+.tcard:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.3);box-shadow:0 16px 50px rgba(201,168,76,.1)}
+.stars{margin-bottom:18px;display:flex;gap:3px}
+.stars svg{fill:var(--gold);stroke:none;width:16px;height:16px}
+.tcard-text{font-size:.93rem;color:rgba(245,240,232,.7);line-height:1.75;margin-bottom:28px;font-style:italic}
+.tcard-author{display:flex;align-items:center;gap:14px}
+.tcard-av{width:46px;height:46px;border-radius:50%;border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:var(--black);flex-shrink:0;background:linear-gradient(135deg,#b8860b,#f0d080)}
+.tcard-name{font-weight:700;font-size:.88rem}
+.tcard-role{font-size:.75rem;color:var(--gray)}
 
-    /* ===== SOCIAL PROOF ===== */
-    #prova {
-      padding: 5rem 1.5rem;
-      background: linear-gradient(180deg, transparent 0%, rgba(123,47,255,0.05) 100%);
-    }
-    .carousel-wrapper { max-width: 900px; margin: 0 auto; position: relative; overflow: hidden; }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
-    }
-    .testimonial {
-      min-width: 100%;
-      background: var(--dark-card);
-      border: 1px solid rgba(123,47,255,0.3);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem;
-    }
-    .avatar {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--purple), var(--blue));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-      box-shadow: 0 0 20px rgba(123,47,255,0.5);
-      flex-shrink: 0;
-    }
-    .testimonial blockquote {
-      font-size: 1.05rem; color: #cbd5e1;
-      font-style: italic; line-height: 1.7;
-    }
-    .testimonial cite { font-size: 0.9rem; font-weight: 700; color: var(--green); font-style: normal; }
-    .testimonial .stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; }
-    .carousel-controls {
-      display: flex; justify-content: center; align-items: center; gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .carousel-btn {
-      background: rgba(123,47,255,0.2);
-      border: 1px solid var(--purple);
-      color: var(--purple-light);
-      border-radius: 50%; width: 42px; height: 42px;
-      font-size: 1.2rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    .carousel-btn:hover {
-      background: var(--purple);
-      box-shadow: 0 0 15px rgba(123,47,255,0.7);
-      color: #fff;
-    }
-    .carousel-dots { display: flex; gap: 6px; }
-    .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(123,47,255,0.3);
-      transition: background 0.3s, transform 0.3s;
-      cursor: pointer;
-    }
-    .dot.active { background: var(--purple-light); transform: scale(1.3); }
+/* ─── STATS ─── */
+.stats{position:relative;z-index:1;padding:100px 24px;background:linear-gradient(135deg,var(--black2),var(--black3))}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.stat-item{padding:20px;border-right:1px solid rgba(201,168,76,.1)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-size:2.8rem;font-weight:900;line-height:1}
+.stat-label{font-size:.78rem;color:var(--gray);margin-top:8px;letter-spacing:.05em}
 
-    /* ===== BENEFITS ===== */
-    #beneficios {
-      padding: 5rem 1.5rem;
-      background: radial-gradient(ellipse 50% 40% at 50% 50%, rgba(0,255,153,0.07) 0%, transparent 80%);
-    }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .benefit-card {
-      background: var(--dark-card);
-      border: 1px solid rgba(0,255,153,0.2);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      position: relative; overflow: hidden;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    }
-    .benefit-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--purple), var(--green));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s;
-    }
-    .benefit-card:hover::before { transform: scaleX(1); }
-    .benefit-card:hover {
-      border-color: var(--green);
-      box-shadow: 0 0 30px rgba(0,255,153,0.25);
-      transform: translateY(-6px);
-    }
-    .benefit-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
-    .benefit-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--green); margin-bottom: 0.6rem; }
-    .benefit-card p { font-size: 0.92rem; color: var(--text-dim); }
+/* ─── FAQ ─── */
+.faq{position:relative;z-index:1;padding:120px 24px;background:var(--black2)}
+.faq .header{text-align:center;margin-bottom:60px}
+.faq-list{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--black);border:1px solid rgba(201,168,76,.1);border-radius:18px;overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:rgba(201,168,76,.3)}
+.faq-q{width:100%;background:none;border:none;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Inter',sans-serif;font-size:.97rem;font-weight:600;color:var(--white);text-align:left}
+.faq-icon{width:30px;height:30px;border-radius:50%;border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .35s,background .35s,border-color .35s}
+.faq-icon svg{stroke:var(--gold-pale);width:14px;height:14px}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);border-color:var(--gold)}
+.faq-item.open .faq-icon svg{stroke:#000}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.faq-item.open .faq-a{max-height:180px}
+.faq-a-inner{padding:0 28px 24px;font-size:.92rem;color:rgba(245,240,232,.55);line-height:1.75}
 
-    /* ===== COUNTDOWN ===== */
-    #countdown-section {
-      padding: 2.5rem 1.5rem;
-      background: linear-gradient(90deg, rgba(123,47,255,0.15), rgba(0,207,255,0.1));
-      border-top: 1px solid rgba(123,47,255,0.2);
-      border-bottom: 1px solid rgba(123,47,255,0.2);
-      text-align: center;
-    }
-    #countdown-section p {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      margin-bottom: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    #countdown-section p span { color: var(--green); }
-    .countdown {
-      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
-    }
-    .count-block {
-      background: var(--dark-card);
-      border: 1px solid var(--purple);
-      border-radius: 12px;
-      padding: 0.8rem 1.2rem;
-      min-width: 72px;
-      box-shadow: 0 0 15px rgba(123,47,255,0.3);
-    }
-    .count-block .num {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2rem; font-weight: 900;
-      color: var(--blue);
-      text-shadow: 0 0 12px var(--blue);
-      display: block; line-height: 1;
-    }
-    .count-block .lbl {
-      font-size: 0.68rem; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--text-dim);
-    }
+/* ─── URGENCY ─── */
+.urgency{position:relative;z-index:1;padding:100px 24px;background:var(--black);text-align:center;overflow:hidden}
+.urgency::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);border-radius:50%;pointer-events:none}
+.urgency-inner{max-width:600px;margin:0 auto;position:relative;z-index:1}
+.urgency-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 32px}
+.urgency-icon svg{stroke:var(--gold-pale);width:30px;height:30px}
+.urgency p{font-size:1.05rem;color:rgba(245,240,232,.55);line-height:1.75;margin-bottom:48px}
 
-    /* ===== OFFER ===== */
-    #oferta {
-      padding: 5rem 1.5rem;
-      text-align: center;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(123,47,255,0.15) 0%, transparent 75%);
-    }
-    .offer-card {
-      max-width: 560px; margin: 0 auto;
-      background: var(--dark-card);
-      border: 2px solid var(--purple);
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      position: relative;
-      box-shadow: 0 0 60px rgba(123,47,255,0.35), 0 0 120px rgba(0,207,255,0.1);
-    }
-    .offer-badge {
-      position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(90deg, var(--purple), var(--blue));
-      color: #fff; font-size: 0.78rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      padding: 0.35rem 1.4rem; border-radius: 50px;
-      white-space: nowrap;
-      box-shadow: 0 0 20px rgba(123,47,255,0.7);
-    }
-    .offer-name {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.4rem; font-weight: 900;
-      color: var(--blue);
-      text-shadow: 0 0 15px rgba(0,207,255,0.6);
-      margin-bottom: 0.3rem;
-    }
-    .offer-desc { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 2rem; }
-    .offer-price-old {
-      font-size: 1.1rem; color: #64748b;
-      text-decoration: line-through; margin-bottom: 0.3rem;
-    }
-    .offer-price {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3rem; font-weight: 900;
-      color: var(--green);
-      text-shadow: 0 0 20px rgba(0,255,153,0.7);
-      margin-bottom: 0.3rem;
-    }
-    .offer-price-note { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 2rem; }
-    .offer-guarantee {
-      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-      background: rgba(0,255,153,0.05);
-      border: 1px solid rgba(0,255,153,0.2);
-      border-radius: 12px; padding: 1rem;
-      margin-bottom: 2rem;
-      font-size: 0.9rem; color: var(--text-dim);
-    }
-    .offer-guarantee span { font-size: 1.6rem; }
-    .offer-guarantee strong { color: var(--green); }
-    .offer-features {
-      list-style: none; text-align: left;
-      margin-bottom: 2rem;
-    }
-    .offer-features li {
-      display: flex; align-items: center; gap: 0.6rem;
-      font-size: 0.9rem; padding: 0.45rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .offer-features li::before {
-      content: '✓'; color: var(--green);
-      font-weight: 900; font-size: 1rem;
-      text-shadow: 0 0 8px var(--green);
-    }
+/* ─── CTA FINAL ─── */
+.cta-final{position:relative;z-index:1;padding:140px 24px;text-align:center;background:linear-gradient(180deg,var(--black2) 0%,var(--black) 100%);overflow:hidden}
+.cta-final::before{content:'';position:absolute;bottom:-100px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(201,168,76,.1),transparent 70%);pointer-events:none}
+.cta-final .inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+.cta-final .title{font-size:clamp(2rem,5vw,3.8rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.cta-final .sub{font-size:1.05rem;color:rgba(245,240,232,.5);margin-bottom:56px;line-height:1.7}
+.guarantee{margin-top:32px;display:flex;align-items:center;justify-content:center;gap:10px;color:rgba(201,168,76,.5);font-size:.82rem}
+.guarantee svg{stroke:var(--gold);width:16px;height:16px}
 
-    /* ===== SCARCITY BAR ===== */
-    .scarcity {
-      text-align: center; margin-top: 1.2rem;
-      font-size: 0.85rem; color: #f87171;
-    }
-    .scarcity strong { color: #fca5a5; }
+/* ─── FOOTER ─── */
+footer{position:relative;z-index:1;background:var(--black);border-top:1px solid rgba(201,168,76,.08);padding:48px 24px;text-align:center}
+footer p{font-size:.78rem;color:rgba(245,240,232,.2);line-height:2}
+footer a{color:rgba(201,168,76,.4);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--gold)}
+.footer-logo{font-size:1.1rem;font-weight:800;letter-spacing:.06em;margin-bottom:20px}
 
-    /* ===== SCROLL REVEAL ===== */
-    .reveal {
-      opacity: 0; transform: translateY(40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1; transform: translateY(0);
-    }
-    .reveal-left {
-      opacity: 0; transform: translateX(-40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right {
-      opacity: 0; transform: translateX(40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
 
-    /* Stagger children */
-    .stagger > * {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .stagger.visible > * { opacity: 1; transform: translateY(0); }
-    .stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
-    .stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
-    .stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
-    .stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
-    .stagger.visible > *:nth-child(5) { transition-delay: 0.45s; }
-
-    /* ===== DIVIDER ===== */
-    .neon-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--purple), var(--blue), var(--purple), transparent);
-      margin: 0 auto;
-      max-width: 80%;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 2.5rem 1.5rem; text-align: center;
-      font-size: 0.82rem; color: var(--text-dim);
-      border-top: 1px solid var(--border);
-    }
-    footer a { color: var(--purple-light); transition: color 0.2s; }
-    footer a:hover { color: var(--blue); }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 640px) {
-      .nav-logo { font-size: 0.9rem; }
-      .btn-cta { padding: 0.9rem 2rem; font-size: 0.95rem; }
-      .hero-chart { display: none; }
-      .testimonial { padding: 2rem 1.2rem; }
-    }
-  </style>
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .pain .container,.authority-grid{grid-template-columns:1fr;gap:48px}
+  .steps-row{grid-template-columns:1fr 1fr;gap:40px}
+  .steps-row::before{display:none}
+  .stats-inner{grid-template-columns:1fr 1fr;gap:0}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item:nth-child(3){border-top:1px solid rgba(201,168,76,.1);border-right:1px solid rgba(201,168,76,.1)}
+  .stat-item:nth-child(4){border-top:1px solid rgba(201,168,76,.1)}
+  .solution-box{padding:36px 28px}
+}
+@media(max-width:600px){
+  .steps-row{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr 1fr}
+}
+</style>
 </head>
 <body>
 
-<!-- PARTICLE CANVAS -->
-<canvas id="particles-canvas"></canvas>
+<canvas id="bg-canvas"></canvas>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">◈ Rico em 2026</div>
-  <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="nav-cta" target="_blank" rel="noopener">Começar Agora</a>
+  <div class="nav-logo"><span class="gold">RICO</span> 2026</div>
+  <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="nav-cta">Acessar Agora</a>
 </nav>
 
-<!-- ========== HERO ========== -->
-<section id="hero">
-  <div class="hero-badge">▲ Vagas Limitadas — 2026 é agora</div>
-  <h1 class="hero-title reveal">O Método Secreto para<br>Ficar Rico em 2026</h1>
-  <p class="hero-sub reveal">
-    Descubra como pessoas <span>comuns</span> estão criando renda online<br>
-    mesmo começando <span>do zero</span> — sem experiência, sem capital
-  </p>
-  <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-cta reveal" target="_blank" rel="noopener">
-    &#9654; QUERO COMEÇAR AGORA
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="hero-badge-dot"></span> Método Exclusivo — Atualizado 2026</div>
+  <h1>O Método Simples Que Está<br/>Criando <span class="gold">Novos Ricos</span><br/>em 2026</h1>
+  <p class="hero-sub">Descubra como pessoas comuns estão construindo renda real e mudando de vida — mesmo começando do absoluto zero.</p>
+  <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-gold">
+    QUERO ACESSAR AGORA
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
-  <p class="hero-note reveal">&#10003; Acesso imediato &nbsp;|&nbsp; <span>100% Online</span> &nbsp;|&nbsp; Resultados Comprovados</p>
-  <div class="hero-chart reveal" aria-hidden="true">
-    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-    <div class="bar"></div><div class="bar"></div>
+  <div class="hero-scroll">
+    <span class="scroll-text">Descubra mais</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
-<div class="neon-divider"></div>
+<div class="gold-line"></div>
 
-<!-- ========== COUNTDOWN ========== -->
-<section id="countdown-section">
-  <p>&#9670; Oferta especial expira em: <span>Garanta o menor preço!</span></p>
-  <div class="countdown">
-    <div class="count-block"><span class="num" id="c-days">00</span><span class="lbl">Dias</span></div>
-    <div class="count-block"><span class="num" id="c-hours">00</span><span class="lbl">Horas</span></div>
-    <div class="count-block"><span class="num" id="c-min">00</span><span class="lbl">Min</span></div>
-    <div class="count-block"><span class="num" id="c-sec">00</span><span class="lbl">Seg</span></div>
-  </div>
-</section>
-
-<div class="neon-divider"></div>
-
-<!-- ========== DOR ========== -->
-<section id="dor">
-  <h2 class="section-title glow-purple reveal">Você se Identifica Com Isso?</h2>
-  <p class="section-sub reveal">A maioria das pessoas trava nesses problemas — e nunca sai do lugar</p>
-  <div class="pain-grid stagger">
-    <div class="pain-card">
-      <div class="pain-icon">&#36;</div>
-      <div>
-        <h3>Sempre no Sufoco Financeiro</h3>
-        <p>O dinheiro acaba antes do fim do mês e parece impossível sair dessa roda-viva sem fim.</p>
+<!-- PAIN -->
+<section class="pain">
+  <div class="container">
+    <div class="reveal">
+      <p class="label">Você se identifica?</p>
+      <h2 class="title">Trabalhar mais e ganhar<br/>menos não é o caminho.</h2>
+      <p class="sub">Você já parou pra pensar que talvez o problema não seja esforço — mas o caminho que te ensinaram a seguir? Enquanto o mundo muda, a maioria continua presa na mesma rotina.</p>
+      <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-gold" style="font-size:.88rem;padding:14px 34px">Descobrir o caminho →</a>
+    </div>
+    <div class="pain-cards reveal d2">
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="pain-text">Mês termina e o dinheiro também<small>Parece que não sobra nada, nunca</small></div>
       </div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">&#9680;</div>
-      <div>
-        <h3>Trabalha Muito, Ganha Pouco</h3>
-        <p>Você troca seu tempo por um salário que não cresce enquanto os preços sobem todo mês.</p>
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="pain-text">Rotina sufocante, sem perspectiva<small>Trabalhar pra pagar conta não é viver</small></div>
       </div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">&#9888;</div>
-      <div>
-        <h3>Medo do Futuro</h3>
-        <p>A aposentadoria parece distante e incerta. A estabilidade que você quer parece um sonho.</p>
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="pain-text">Informação demais, resultado zero<small>Tentou tanta coisa e nada funcionou de verdade</small></div>
       </div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">&#8855;</div>
-      <div>
-        <h3>Sem Conhecimento de Onde Começar</h3>
-        <p>Você quer mudar mas não sabe por onde começar — toda informação contradiz a outra.</p>
+      <div class="pain-card">
+        <div class="pain-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="pain-text">Quer mudar, mas não sabe por onde<small>O método certo faz toda a diferença</small></div>
       </div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:3rem;" class="reveal">
-    <p style="color:var(--blue);font-size:1.1rem;font-weight:600;margin-bottom:1.5rem;">Se você disse sim para qualquer um desses pontos — isso foi feito pra você.</p>
-    <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-cta" target="_blank" rel="noopener">VER A SOLUÇÃO AGORA</a>
-  </div>
-</section>
-
-<div class="neon-divider"></div>
-
-<!-- ========== SOLUÇÃO ========== -->
-<section id="solucao">
-  <h2 class="section-title glow-blue reveal">A Solução que Você Estava Esperando</h2>
-  <p class="section-sub reveal">Um método direto ao ponto, passo a passo, projetado para funcionar mesmo para quem está começando do zero</p>
-  <div class="sol-grid stagger">
-    <div class="sol-card">
-      <span class="sol-icon">&#9776;</span>
-      <h3>Método Passo a Passo</h3>
-      <p>Sem enrolação. Cada módulo te leva diretamente ao próximo nível. Simples, claro e aplicável.</p>
-    </div>
-    <div class="sol-card">
-      <span class="sol-icon">&#9672;</span>
-      <h3>100% Online</h3>
-      <p>Trabalhe de qualquer lugar do mundo. Só precisa de um celular ou computador e acesso à internet.</p>
-    </div>
-    <div class="sol-card">
-      <span class="sol-icon">&#9735;</span>
-      <h3>Resultados Rápidos</h3>
-      <p>O método foi otimizado para você ver os primeiros resultados em poucos dias de aplicação.</p>
-    </div>
-    <div class="sol-card">
-      <span class="sol-icon">&#9670;</span>
-      <h3>Método Comprovado</h3>
-      <p>Mais de 10.000 alunos já aplicaram e transformaram suas finanças. Não é teoria — é resultado real.</p>
     </div>
   </div>
 </section>
 
-<div class="neon-divider"></div>
-
-<!-- ========== PROVA SOCIAL ========== -->
-<section id="prova">
-  <h2 class="section-title glow-purple reveal">O que os Alunos Estão Dizendo</h2>
-  <p class="section-sub reveal">Resultados reais de pessoas comuns que aplicaram o método</p>
-  <div class="carousel-wrapper reveal">
-    <div class="carousel-track" id="carousel-track">
-      <!-- Slide 1 -->
-      <div class="testimonial">
-        <div class="avatar">C</div>
-        <div class="stars">★★★★★</div>
-        <blockquote>"Comecei sem saber absolutamente nada. Em 3 semanas já estava faturando R$ 2.800 de forma consistente. Esse método mudou minha vida de verdade. Recomendo sem hesitar!"</blockquote>
-        <cite>Carla M. — São Paulo, SP</cite>
-      </div>
-      <!-- Slide 2 -->
-      <div class="testimonial">
-        <div class="avatar">R</div>
-        <div class="stars">★★★★★</div>
-        <blockquote>"Trabalhava 12 horas por dia como motorista de app ganhando pouco. Depois do método, em 45 dias substituí minha renda e hoje trabalho 4 horas de casa. Incrível!"</blockquote>
-        <cite>Rafael S. — Belo Horizonte, MG</cite>
-      </div>
-      <!-- Slide 3 -->
-      <div class="testimonial">
-        <div class="avatar">F</div>
-        <div class="stars">★★★★★</div>
-        <blockquote>"Sou dona de casa, nunca trabalhei fora. Achei que esse mundo digital não era pra mim. Me surpreendi — já estou no 3º mês com renda extra e crescendo!"</blockquote>
-        <cite>Fernanda R. — Curitiba, PR</cite>
-      </div>
-      <!-- Slide 4 -->
-      <div class="testimonial">
-        <div class="avatar">L</div>
-        <div class="stars">★★★★★</div>
-        <blockquote>"Em apenas 60 dias atingi R$ 8.500 de faturamento online. O suporte é incrível e o método é extremamente detalhado. Vale cada centavo investido!"</blockquote>
-        <cite>Lucas T. — Porto Alegre, RS</cite>
-      </div>
-    </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="prev-btn" aria-label="Anterior">&#8592;</button>
-      <div class="carousel-dots" id="dots"></div>
-      <button class="carousel-btn" id="next-btn" aria-label="Próximo">&#8594;</button>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:2.5rem;" class="reveal">
-    <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-cta" target="_blank" rel="noopener">&#9654; QUERO RESULTADOS ASSIM</a>
-  </div>
-</section>
-
-<div class="neon-divider"></div>
-
-<!-- ========== BENEFÍCIOS ========== -->
-<section id="beneficios">
-  <h2 class="section-title glow-green reveal">O Que Você Vai Conquistar</h2>
-  <p class="section-sub reveal">Ao aplicar o método, sua vida vai mudar em todas as dimensões</p>
-  <div class="benefits-grid stagger">
-    <div class="benefit-card">
-      <span class="benefit-icon">&#9670;</span>
-      <h3>Liberdade Financeira</h3>
-      <p>Pare de depender de um único salário. Construa múltiplas fontes de renda que trabalham por você, 24 horas por dia.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">&#8962;</span>
-      <h3>Trabalhe de Casa</h3>
-      <p>Chega de trânsito, reuniões sem fim e chefe no seu pescoço. Mon monte seu próprio horário e trabalhe de onde quiser.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">&#9650;</span>
-      <h3>Escale Seus Ganhos</h3>
-      <p>Diferente do emprego tradicional, aqui o seu teto é o céu. Quanto mais você aplica, mais você ganha.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">&#10022;</span>
-      <h3>Propósito & Realização</h3>
-      <p>Faça o que você ama e seja pago por isso. Construa algo que é seu, com orgulho e satisfação.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">&#9711;</span>
-      <h3>Mais Tempo Para Você</h3>
-      <p>Recupere seu tempo livre para estar com a família, viajar e viver experiências inesquecíveis.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">&#9672;</span>
-      <h3>Renda Recorrente</h3>
-      <p>Crie uma renda que entra todo mês de forma previsível. Segurança para você e sua família para sempre.</p>
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="solution-inner">
+    <p class="label reveal">A Solução</p>
+    <h2 class="title reveal d1">2026 trouxe novas regras.<br/>Quem entender primeiro, vence.</h2>
+    <p class="sub reveal d2" style="margin:0 auto">O mercado digital está em expansão acelerada. Existe um método direto, validado, que qualquer pessoa pode aplicar — independente de onde está hoje.</p>
+    <div class="solution-box reveal d3">
+      <p>Não estamos falando de <strong>sorte</strong>, nem de <strong>investimento arriscado</strong>. Estamos falando de um <strong>sistema estruturado</strong>, aplicado por pessoas comuns que decidiram parar de esperar e passaram a agir com <strong>estratégia real e comprovada</strong>.</p>
     </div>
   </div>
 </section>
 
-<div class="neon-divider"></div>
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="benefits-header">
+    <p class="label reveal">O que você vai ter</p>
+    <h2 class="title reveal d1">Projetado para quem parte<br/>do zero — e quer chegar longe.</h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="bcard reveal d1">
+      <div class="bcard-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div class="bcard-title">Comece do Zero</div>
+      <div class="bcard-desc">Nenhum conhecimento prévio necessário. O método foi criado exatamente para quem está iniciando agora.</div>
+    </div>
+    <div class="bcard reveal d2">
+      <div class="bcard-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="bcard-title">Sem Experiência</div>
+      <div class="bcard-desc">Não importa sua área ou histórico. O que importa é a decisão de agir. Tudo o mais é ensinado.</div>
+    </div>
+    <div class="bcard reveal d3">
+      <div class="bcard-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="bcard-title">Método Validado</div>
+      <div class="bcard-desc">Testado por centenas de pessoas com resultados documentados e consistentes ao longo do tempo.</div>
+    </div>
+    <div class="bcard reveal d4">
+      <div class="bcard-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="bcard-title">Escalável</div>
+      <div class="bcard-desc">Você começa pequeno e expande no seu ritmo. O teto é definido somente pela sua dedicação.</div>
+    </div>
+  </div>
+</section>
 
-<!-- ========== OFERTA ========== -->
-<section id="oferta">
-  <h2 class="section-title glow-green reveal">Pegue Sua Vaga Agora</h2>
-  <p class="section-sub reveal">Essa oferta não vai durar — aproveite enquanto ainda está disponível</p>
-  <div class="offer-card reveal">
-    <div class="offer-badge">&#9670; Oferta Especial por Tempo Limitado</div>
-    <p class="offer-name">MÉTODO RICO 2026</p>
-    <p class="offer-desc">O sistema completo passo a passo para criar renda online</p>
+<!-- STEPS -->
+<section class="steps-sec">
+  <div class="container">
+    <div class="header">
+      <p class="label reveal">Como funciona</p>
+      <h2 class="title reveal d1">Simples. Direto. Funciona.</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step-item reveal d1">
+        <div class="step-num">1</div>
+        <div class="step-title">Acesse o Método</div>
+        <div class="step-desc">Tenha acesso imediato ao conteúdo completo, organizado e objetivo.</div>
+      </div>
+      <div class="step-item reveal d2">
+        <div class="step-num">2</div>
+        <div class="step-title">Aprenda o Sistema</div>
+        <div class="step-desc">Siga o passo a passo criado para gerar resultados desde o início.</div>
+      </div>
+      <div class="step-item reveal d3">
+        <div class="step-num">3</div>
+        <div class="step-title">Aplique e Expanda</div>
+        <div class="step-desc">Coloque em prática e escale conforme seus resultados aparecem.</div>
+      </div>
+      <div class="step-item reveal d4">
+        <div class="step-num">4</div>
+        <div class="step-title">Transforme sua Vida</div>
+        <div class="step-desc">Construa a liberdade financeira que sempre foi possível — mas nunca te ensinaram como.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat-item reveal d1"><div class="stat-num gold">2.400+</div><div class="stat-label">Pessoas transformadas</div></div>
+    <div class="stat-item reveal d2"><div class="stat-num gold">98%</div><div class="stat-label">Taxa de satisfação</div></div>
+    <div class="stat-item reveal d3"><div class="stat-num gold">4.9★</div><div class="stat-label">Avaliação média</div></div>
+    <div class="stat-item reveal d4"><div class="stat-num gold">2026</div><div class="stat-label">Atualizado agora</div></div>
+  </div>
+</section>
 
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="header">
+    <p class="label reveal">Depoimentos</p>
+    <h2 class="title reveal d1">Pessoas reais.<br/>Mudanças reais.</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="tcard reveal d1">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="tcard-text">"Era completamente leiga no assunto. Depois de acessar, em poucas semanas já tinha resultados concretos. Não acreditava que fosse tão direto ao ponto."</p>
+      <div class="tcard-author">
+        <div class="tcard-av">AM</div>
+        <div><div class="tcard-name">Ana M.</div><div class="tcard-role">São Paulo, SP</div></div>
+      </div>
+    </div>
+    <div class="tcard reveal d2">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="tcard-text">"Tentei várias coisas antes. Nenhuma com essa clareza. O método é diferente porque não enrola: você entende, aplica e vê acontecer. Simples assim."</p>
+      <div class="tcard-author">
+        <div class="tcard-av">RS</div>
+        <div><div class="tcard-name">Rafael S.</div><div class="tcard-role">Curitiba, PR</div></div>
+      </div>
+    </div>
+    <div class="tcard reveal d3">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="tcard-text">"Em 2024 estava frustrada financeiramente. Hoje tenho uma renda que cresce todo mês. Essa decisão mudou o rumo da minha vida de verdade."</p>
+      <div class="tcard-author">
+        <div class="tcard-av">CL</div>
+        <div><div class="tcard-name">Carla L.</div><div class="tcard-role">Belo Horizonte, MG</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <ul class="offer-features">
-      <li>Acesso imediato e vitalício ao método completo</li>
-      <li>Módulos passo a passo em vídeo e texto</li>
-      <li>Suporte direto com especialistas</li>
-      <li>Atualizações futuras sem custo adicional</li>
-      <li>Comunidade exclusiva de alunos</li>
-      <li>Bônus: Planilha de Controle de Ganhos</li>
-    </ul>
+<!-- FAQ -->
+<section class="faq">
+  <div class="header">
+    <p class="label reveal">Suas dúvidas</p>
+    <h2 class="title reveal d1">Perguntas frequentes</h2>
+  </div>
+  <div class="faq-list reveal d2">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Funciona mesmo para quem nunca fez nada parecido?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Sim. O método foi estruturado especificamente para quem está começando do zero. Não é necessário experiência prévia, conhecimento técnico ou histórico em negócios.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Preciso investir muito para começar?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+      <div class="faq-a"><div class="faq-a-inner">O modelo foi pensado para quem não tem capital inicial. Você aprende a usar o que já tem disponível e escala conforme os resultados aparecem.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">E se eu não souber nada de tecnologia?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Nenhum conhecimento técnico é exigido. O conteúdo é direto, sem jargões complicados. Se você usa smartphone, você consegue aplicar.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Quanto tempo leva para ver resultados?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Depende da sua dedicação, mas muitas pessoas relatam os primeiros sinais ainda nas primeiras semanas de aplicação consistente.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Isso é seguro? Posso confiar?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Sim. O método foi validado por mais de 2.400 pessoas com alta taxa de satisfação. O acesso é feito por plataforma segura e você conta com suporte incluído.</div></div>
+    </div>
+  </div>
+</section>
 
-    <p class="offer-price-old">De R$ 297,00</p>
-    <p class="offer-price">R$ 29,90</p>
-    <p class="offer-price-note">à vista ou 7x de R$ 5,07 no cartão</p>
+<!-- URGENCY -->
+<section class="urgency">
+  <div class="urgency-inner reveal">
+    <div class="urgency-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </div>
+    <h2 class="title" style="margin-bottom:16px">O momento certo é agora.</h2>
+    <p>Oportunidades como essa não ficam abertas indefinidamente. O acesso pode ser limitado a qualquer momento. Quem age primeiro, sai na frente.</p>
+    <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-gold">GARANTIR MEU ACESSO →</a>
+  </div>
+</section>
 
-    <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-cta btn-cta-green" target="_blank" rel="noopener" style="display:block;font-size:1.2rem;padding:1.3rem 2rem;">
-      &#9654; COMPRAR AGORA COM DESCONTO
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="inner">
+    <p class="label reveal">Sua decisão</p>
+    <h2 class="title reveal d1">Uma decisão pode separar você de uma <span class="gold">vida completamente diferente.</span></h2>
+    <p class="sub reveal d2">Você já sabe que o caminho atual não está te levando pra onde quer chegar. O próximo passo está aqui.</p>
+    <a href="https://pay.cakto.com.br/3fkgx5t_816888" class="btn-gold reveal d3" style="font-size:1.15rem;padding:24px 64px">
+      COMEÇAR AGORA
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-    <p class="scarcity"><strong>&#9888; Atenção:</strong> Restam apenas <strong id="slots">7</strong> vagas com este preço especial</p>
+    <div class="guarantee reveal d4">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Acesso seguro · Plataforma confiável · Suporte incluído
+    </div>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Método Rico 2026 — Todos os direitos reservados</p>
-  <p style="margin-top:0.5rem;">
-    <a href="#">Política de Privacidade</a> &nbsp;|&nbsp;
-    <a href="#">Termos de Uso</a> &nbsp;|&nbsp;
-    <a href="https://pay.cakto.com.br/3fkgx5t_816888" target="_blank" rel="noopener">Área do Aluno</a>
-  </p>
-  <p style="margin-top:0.8rem;font-size:0.75rem;color:#475569;">
-    Este produto é distribuído pela plataforma Cakto. Os resultados individuais variam conforme dedicação e aplicação de cada aluno.
-  </p>
+  <div class="footer-logo"><span class="gold">RICO</span> 2026</div>
+  <p>© 2026 · Todos os direitos reservados · <a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></p>
+  <p style="margin-top:8px">Este site não garante resultados específicos. Os resultados variam conforme o esforço e dedicação de cada pessoa.</p>
 </footer>
 
-<!-- ========== SCRIPTS ========== -->
 <script>
-/* ===== PARTICLES ===== */
-(function(){
-  const canvas = document.getElementById('particles-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
-  const colors = ['rgba(123,47,255,0.7)','rgba(0,207,255,0.6)','rgba(0,255,153,0.5)','rgba(168,85,247,0.5)'];
+// ── GOLD PARTICLE FIELD ──
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, mouse = {x: -9999, y: -9999};
 
-  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-  window.addEventListener('resize', resize); resize();
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
-  class Particle {
-    constructor(){
-      this.x = Math.random()*W; this.y = Math.random()*H;
-      this.r = Math.random()*2+0.5;
-      this.vx = (Math.random()-0.5)*0.5; this.vy = (Math.random()-0.5)*0.5;
-      this.color = colors[Math.floor(Math.random()*colors.length)];
-      this.alpha = Math.random()*0.8+0.2;
-    }
-    update(){ this.x+=this.vx; this.y+=this.vy; if(this.x<0||this.x>W)this.vx*=-1; if(this.y<0||this.y>H)this.vy*=-1; }
-    draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fillStyle=this.color; ctx.globalAlpha=this.alpha; ctx.fill(); ctx.globalAlpha=1; }
+const COLORS = ['rgba(201,168,76,', 'rgba(240,208,128,', 'rgba(184,134,11,'];
+
+class Particle {
+  constructor() { this.reset(true); }
+  reset(init) {
+    this.x = Math.random() * W;
+    this.y = init ? Math.random() * H : (Math.random() > .5 ? -10 : H + 10);
+    this.r = Math.random() * 1.8 + .5;
+    this.vx = (Math.random() - .5) * .5;
+    this.vy = (Math.random() - .5) * .5;
+    this.baseVx = this.vx;
+    this.baseVy = this.vy;
+    this.opacity = Math.random() * .6 + .15;
+    this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    this.life = 0;
+    this.maxLife = 300 + Math.random() * 400;
   }
+  update() {
+    // Mouse repel
+    const dx = this.x - mouse.x, dy = this.y - mouse.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 120) {
+      const force = (120 - dist) / 120;
+      this.vx += (dx / dist) * force * .8;
+      this.vy += (dy / dist) * force * .8;
+    }
+    // Dampen back to base
+    this.vx += (this.baseVx - this.vx) * .05;
+    this.vy += (this.baseVy - this.vy) * .05;
+    this.x += this.vx;
+    this.y += this.vy;
+    this.life++;
+    if (this.x < -20 || this.x > W+20 || this.y < -20 || this.y > H+20 || this.life > this.maxLife) this.reset(false);
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.fillStyle = this.color + this.opacity + ')';
+    ctx.fill();
+    // Glow
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r * 3, 0, Math.PI*2);
+    const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r * 3);
+    g.addColorStop(0, this.color + (this.opacity * .3) + ')');
+    g.addColorStop(1, this.color + '0)');
+    ctx.fillStyle = g;
+    ctx.fill();
+  }
+}
 
-  for(let i=0;i<100;i++) particles.push(new Particle());
+const particles = Array.from({length: 160}, () => new Particle());
 
-  function connectParticles(){
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
-        const dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){ ctx.strokeStyle='rgba(123,47,255,'+(0.12*(1-dist/120))+')'; ctx.lineWidth=0.5; ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke(); }
+function drawConnections() {
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i+1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const d = Math.sqrt(dx*dx + dy*dy);
+      if (d < 140) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(201,168,76,${.08 * (1 - d/140)})`;
+        ctx.lineWidth = .6;
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
       }
     }
   }
+}
 
-  function animate(){ ctx.clearRect(0,0,W,H); connectParticles(); particles.forEach(p=>{p.update();p.draw();}); requestAnimationFrame(animate); }
-  animate();
-})();
+// Floating orbs
+const orbs = [
+  {x:.15, y:.2, r:200, speed:.0003, phase:0},
+  {x:.8,  y:.6, r:280, speed:.0004, phase:2},
+  {x:.5,  y:.85,r:180, speed:.0005, phase:4},
+];
 
-/* ===== SCROLL REVEAL ===== */
-(function(){
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el=>obs.observe(el));
-})();
-
-/* ===== COUNTDOWN ===== */
-(function(){
-  // Set deadline 3 days from now stored in sessionStorage for consistency
-  let deadline = sessionStorage.getItem('countdown_deadline');
-  if(!deadline){
-    deadline = Date.now() + 3*24*60*60*1000;
-    sessionStorage.setItem('countdown_deadline', deadline);
-  }
-  deadline = parseInt(deadline);
-
-  function pad(n){ return String(n).padStart(2,'0'); }
-
-  function tick(){
-    const now = Date.now();
-    let diff = Math.max(0, deadline - now);
-    const days = Math.floor(diff/86400000); diff %= 86400000;
-    const hours = Math.floor(diff/3600000); diff %= 3600000;
-    const mins = Math.floor(diff/60000); diff %= 60000;
-    const secs = Math.floor(diff/1000);
-    document.getElementById('c-days').textContent = pad(days);
-    document.getElementById('c-hours').textContent = pad(hours);
-    document.getElementById('c-min').textContent = pad(mins);
-    document.getElementById('c-sec').textContent = pad(secs);
-  }
-  tick(); setInterval(tick, 1000);
-})();
-
-/* ===== CAROUSEL ===== */
-(function(){
-  const track = document.getElementById('carousel-track');
-  const slides = track.querySelectorAll('.testimonial');
-  const dotsContainer = document.getElementById('dots');
-  let current = 0;
-  const total = slides.length;
-
-  // Create dots
-  slides.forEach((_,i)=>{
-    const d = document.createElement('button');
-    d.className = 'dot' + (i===0?' active':'');
-    d.setAttribute('aria-label','Ir para slide '+(i+1));
-    d.addEventListener('click',()=>go(i));
-    dotsContainer.appendChild(d);
+function drawOrbs(t) {
+  orbs.forEach(o => {
+    const cx = W * o.x + Math.sin(t * o.speed + o.phase) * 60;
+    const cy = H * o.y + Math.cos(t * o.speed + o.phase) * 40;
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, o.r);
+    g.addColorStop(0, 'rgba(201,168,76,0.04)');
+    g.addColorStop(1, 'rgba(201,168,76,0)');
+    ctx.beginPath();
+    ctx.arc(cx, cy, o.r, 0, Math.PI*2);
+    ctx.fillStyle = g;
+    ctx.fill();
   });
+}
 
-  function go(n){
-    current = (n+total)%total;
-    track.style.transform=`translateX(-${current*100}%)`;
-    dotsContainer.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));
-  }
+let t = 0;
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  drawOrbs(t);
+  drawConnections();
+  particles.forEach(p => { p.update(); p.draw(); });
+  t++;
+  requestAnimationFrame(animate);
+}
+animate();
 
-  document.getElementById('prev-btn').addEventListener('click',()=>go(current-1));
-  document.getElementById('next-btn').addEventListener('click',()=>go(current+1));
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: .12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Auto-advance
-  setInterval(()=>go(current+1), 5000);
-})();
-
-/* ===== SCARCITY SLOTS (fake urgency) ===== */
-(function(){
-  const el = document.getElementById('slots');
-  let count = parseInt(sessionStorage.getItem('slots')||'7');
-  el.textContent = count;
-  setInterval(()=>{
-    if(count>3 && Math.random()<0.15){ count--; sessionStorage.setItem('slots',count); el.textContent=count; }
-  }, 30000);
-})();
-
-/* ===== NAV SCROLL EFFECT ===== */
-window.addEventListener('scroll',()=>{
-  const nav = document.querySelector('nav');
-  if(window.scrollY>60){ nav.style.background='rgba(5,5,8,0.95)'; }
-  else { nav.style.background='rgba(5,5,8,0.75)'; }
-});
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
 </script>
 </body>
 </html>
